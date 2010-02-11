@@ -1,0 +1,508 @@
+
+
+Processing Rails::InfoController#properties (for 95.147.137.85 at 2010-02-11 16:21:38) [GET]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed in 15190ms (View: 2202, DB: 1) | 200 OK [http://connect.blindpages.com/rails/info/properties]
+
+
+Processing Rails::InfoController#properties (for 95.147.137.85 at 2010-02-11 16:21:53) [GET]
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed in 14ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/rails/info/properties]
+
+
+Processing Rails::InfoController#properties (for 95.147.137.85 at 2010-02-11 16:22:01) [GET]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://connect.blindpages.com/rails/info/properties]
+
+
+Processing ApplicationController#index (for 95.147.137.85 at 2010-02-11 16:35:23) [GET]
+
+ActionController::RoutingError (No route matches "/type" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing TypesController#index (for 95.147.137.85 at 2010-02-11 16:35:28) [GET]
+  [4;35;1mType Load (0.0ms)[0m   [0mSQLite3::SQLException: no such table: types: SELECT * FROM "types" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: types: SELECT * FROM "types" ):
+  app/controllers/types_controller.rb:5:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.9ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (15.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (4.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100211152528')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("types")[0m
+
+
+Processing TypesController#index (for 95.147.137.85 at 2010-02-11 16:36:55) [GET]
+  [4;36;1mType Load (0.5ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/types
+Rendering types/index
+Completed in 140ms (View: 134, DB: 1) | 200 OK [http://connect.blindpages.com/types]
+
+
+Processing TypesController#new (for 95.147.137.85 at 2010-02-11 16:36:57) [GET]
+Rendering template within layouts/types
+Rendering types/new
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://connect.blindpages.com/types/new]
+
+
+Processing TypesController#create (for 95.147.137.85 at 2010-02-11 16:37:08) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "type"=>{"name"=>"General"}}
+  [4;35;1mType Create (0.5ms)[0m   [0mINSERT INTO "types" ("name", "updated_at", "created_at") VALUES('General', '2010-02-11 15:37:08', '2010-02-11 15:37:08')[0m
+Redirected to http://connect.blindpages.com/types/1
+Completed in 103ms (DB: 1) | 302 Found [http://connect.blindpages.com/types]
+
+
+Processing TypesController#show (for 95.147.137.85 at 2010-02-11 16:37:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mType Load (0.3ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Rendering template within layouts/types
+Rendering types/show
+Completed in 33ms (View: 26, DB: 0) | 200 OK [http://connect.blindpages.com/types/1]
+
+
+Processing TypesController#index (for 95.147.137.85 at 2010-02-11 16:37:11) [GET]
+  [4;35;1mType Load (0.6ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/types
+Rendering types/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://connect.blindpages.com/types]
+
+
+Processing TypesController#new (for 95.147.137.85 at 2010-02-11 16:37:13) [GET]
+Rendering template within layouts/types
+Rendering types/new
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://connect.blindpages.com/types/new]
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+Migrating to CreateTasks (20100211154644)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (20.7ms)[0m   [0mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state" varchar(255), "description" text, "url" varchar(255), "audio_description" blob, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100211154644')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("types")[0m
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 16:46:57) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 16:47:00) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 16:52:53) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+ERROR: compiling _run_erb_app47views47tasks47new46html46erb RAISED compile error
+/opt/connect/app/views/tasks/new.html.erb:8: syntax error, unexpected ';', expecting ')'
+@output_buffer.concat "    "; @output_buffer.concat(( select(:event, :state, Task::STATES).to_s); @output_buffer.concat "\n"
+                                                                                                 ^
+Function body:           def _run_erb_app47views47tasks47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>New task</h1>\n"
+@output_buffer.concat "\n"
+ form_for(@task) do |f| ; @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.label :state ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( select(:event, :state, Task::STATES).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.label :description ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.text_area :description ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.label :url ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.text_field :url ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.label :audio_description ).to_s); @output_buffer.concat "<br />\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.text_field :audio_description ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( f.submit 'Create' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( link_to 'Back', tasks_path ).to_s); @output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /opt/connect/app/views/tasks/new.html.erb:31:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:947:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:135:in `custom'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:179:in `respond'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `each'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:173:in `respond'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/opt/connect/app/controllers/tasks_controller.rb:29:in `new'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1327:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/opt/connect/app/views/tasks/new.html.erb:8: syntax error, unexpected ';', expecting ')'
+@output_buffer.concat "    "; @output_buffer.concat(( select(:event, :state, Task::STATES).to_s); @output_buffer.concat "\n"
+                                                                                                 ^) on line #8 of app/views/tasks/new.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :state %><br />
+8:     <%= select(:event, :state, Task::STATES%>
+9:   </p>
+10:   <p>
+11:     <%= f.label :description %><br />
+
+    app/views/tasks/new.html.erb:31:in `compile!'
+    app/controllers/tasks_controller.rb:29:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 16:53:18) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 16:58:04) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#create (for 95.147.137.85 at 2010-02-11 16:58:12) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "task"=>{"url"=>"foo", "description"=>"foo", "audio_description"=>"foo", "state"=>"Open"}}
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 16ms (View: 4, DB: 0) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 16:59:14) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 16:59:21) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 77ms (View: 72, DB: 0) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 16:59:23) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#create (for 95.147.137.85 at 2010-02-11 16:59:32) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "task"=>{"url"=>"foo", "description"=>"test", "state"=>"Open"}}
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#create (for 95.147.137.85 at 2010-02-11 16:59:40) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "task"=>{"url"=>"http://foo.com", "description"=>"test", "state"=>"Open"}}
+  [4;36;1mTask Create (11.9ms)[0m   [0;1mINSERT INTO "tasks" ("updated_at", "url", "description", "audio_description", "state", "created_at") VALUES('2010-02-11 15:59:40', 'http://foo.com', 'test', NULL, 'Open', '2010-02-11 15:59:40')[0m
+Redirected to http://connect.blindpages.com/tasks/1
+Completed in 34ms (DB: 12) | 302 Found [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 16:59:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 23ms (View: 16, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1]
+
+
+Processing TasksController#edit (for 95.147.137.85 at 2010-02-11 16:59:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 28ms (View: 20, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1/edit]
+
+
+Processing TasksController#update (for 95.147.137.85 at 2010-02-11 17:00:00) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "event"=>{"state"=>"Done"}, "id"=>"1", "task"=>{"url"=>"http://foo.com", "description"=>"test", "audio_description"=>""}}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+  [4;36;1mTask Update (0.3ms)[0m   [0;1mUPDATE "tasks" SET "audio_description" = '', "updated_at" = '2010-02-11 16:00:00' WHERE "id" = 1[0m
+Redirected to http://connect.blindpages.com/tasks/1
+Completed in 87ms (DB: 1) | 302 Found [http://connect.blindpages.com/tasks/1]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 17:00:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1]
+
+
+Processing TasksController#edit (for 95.147.137.85 at 2010-02-11 17:00:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+
+ActionView::TemplateError (undefined method `merge' for ["Open", "Done"]:Array) on line #8 of app/views/tasks/edit.html.erb:
+5: 
+6:   <p>
+7:     <%= f.label :state %><br />
+8:     <%= f.select(:event, :state, Task::STATES) %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :description %><br />
+
+    app/views/tasks/edit.html.erb:8
+    app/views/tasks/edit.html.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#edit (for 95.147.137.85 at 2010-02-11 17:02:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1/edit]
+
+
+Processing TasksController#update (for 95.147.137.85 at 2010-02-11 17:02:25) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "event"=>{"state"=>"Done"}, "id"=>"1", "task"=>{"url"=>"http://foo.com/foo", "description"=>"testing", "audio_description"=>""}}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+  [4;35;1mTask Update (0.3ms)[0m   [0mUPDATE "tasks" SET "url" = 'http://foo.com/foo', "description" = 'testing', "updated_at" = '2010-02-11 16:02:25' WHERE "id" = 1[0m
+Redirected to http://connect.blindpages.com/tasks/1
+Completed in 113ms (DB: 1) | 302 Found [http://connect.blindpages.com/tasks/1]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 17:02:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1]
+
+
+Processing TasksController#edit (for 95.147.137.85 at 2010-02-11 17:02:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1/edit]
+
+
+Processing TasksController#edit (for 95.147.137.85 at 2010-02-11 17:03:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1/edit]
+
+
+Processing TasksController#update (for 95.147.137.85 at 2010-02-11 17:03:44) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "id"=>"1", "task"=>{"url"=>"http://foo.com/foo", "description"=>"testing", "audio_description"=>"", "state"=>"Done"}}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+  [4;36;1mTask Update (0.3ms)[0m   [0;1mUPDATE "tasks" SET "state" = 'Done', "updated_at" = '2010-02-11 16:03:44' WHERE "id" = 1[0m
+Redirected to http://connect.blindpages.com/tasks/1
+Completed in 33ms (DB: 1) | 302 Found [http://connect.blindpages.com/tasks/1]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 17:03:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1]
+
+
+Processing TasksController#edit (for 95.147.137.85 at 2010-02-11 17:03:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1/edit]
+
+
+Processing TasksController#update (for 95.147.137.85 at 2010-02-11 17:03:53) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "id"=>"1", "task"=>{"url"=>"http://foo.com/foo", "description"=>"testing", "audio_description"=>"", "state"=>"Open"}}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+  [4;36;1mTask Update (0.4ms)[0m   [0;1mUPDATE "tasks" SET "state" = 'Open', "updated_at" = '2010-02-11 16:03:53' WHERE "id" = 1[0m
+Redirected to http://connect.blindpages.com/tasks/1
+Completed in 32ms (DB: 1) | 302 Found [http://connect.blindpages.com/tasks/1]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 17:03:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1]

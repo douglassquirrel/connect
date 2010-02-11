@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  state: MyString
+  description: MyText
+  url: MyString
+  audio_description: 
+
+two:
+  state: MyString
+  description: MyText
+  url: MyString
+  audio_description: 
