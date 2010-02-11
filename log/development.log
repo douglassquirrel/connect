@@ -506,3 +506,1146 @@ Processing TasksController#show (for 95.147.137.85 at 2010-02-11 17:03:53) [GET]
 Rendering template within layouts/tasks
 Rendering tasks/show
 Completed in 12ms (View: 4, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 17:26:42) [GET]
+  [4;36;1mTask Load (1.1ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 74ms (View: 67, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#edit (for 95.147.137.85 at 2010-02-11 20:53:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 30ms (View: 10, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1/edit]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 20:55:07) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 1121ms (View: 1114, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+Migrating to CreateTasks (20100211154644)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("types")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+Migrating to CreateTasks (20100211154644)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("types")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTasks (20100211154644)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDROP TABLE "tasks"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100211154644'[0m
+Migrating to CreateTypes (20100211152528)
+  [4;35;1mSQL (0.4ms)[0m   [0mDROP TABLE "types"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100211152528'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100211152528')[0m
+Migrating to CreateTasks (20100211154644)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "state" varchar(255), "description" text, "url" varchar(255), "audio_description" blob, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100211154644')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("types")[0m
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 21:06:18) [GET]
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 38ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 21:06:21) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+Migrating to CreateTasks (20100211154644)
+Migrating to AddTaskToType (20100211202513)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: near "references": syntax error: ALTER TABLE "types" ADD "task" references[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+Migrating to CreateTasks (20100211154644)
+Migrating to AddTaskToType (20100211202513)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSQLite3::SQLException: near "references": syntax error: ALTER TABLE "types" ADD "task" references[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+Migrating to CreateTasks (20100211154644)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("types")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+Migrating to CreateTasks (20100211154644)
+Migrating to AddTaskToType (20100211203045)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+Migrating to CreateTasks (20100211154644)
+Migrating to AddTaskToType (20100211203045)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mALTER TABLE "types" ADD "task_id" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100211203045')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("types")[0m
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 21:37:50) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 24ms (View: 5, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#create (for 95.147.137.85 at 2010-02-11 21:37:57) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "task"=>{"url"=>"http://foo.com", "description"=>"foo", "state"=>"Open"}}
+  [4;35;1mTask Create (0.7ms)[0m   [0mINSERT INTO "tasks" ("updated_at", "url", "description", "audio_description", "state", "created_at") VALUES('2010-02-11 20:37:57', 'http://foo.com', 'foo', NULL, 'Open', '2010-02-11 20:37:57')[0m
+Redirected to http://connect.blindpages.com/tasks/1
+Completed in 57736ms (DB: 1) | 302 Found [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 21:38:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 385ms (View: 376, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/1]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 21:47:32) [GET]
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 216ms (View: 198, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 21:47:38) [GET]
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 40ms (View: 33, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:11:36) [GET]
+  [4;35;1mType Load (0.2ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+
+ActionView::TemplateError (undefined method `type_id' for #<Task:0x2a9b744148>) on line #11 of app/views/tasks/new.html.erb:
+8:   </p>
+9:   <p>
+10:     <%= f.label :type %><br/>
+11:     <%= collection_select("task", "type_id", @tasks, "id", "name") %> 
+12:   </p>
+13:   <p>
+14:     <%= f.label :description %><br />
+
+    app/views/tasks/new.html.erb:11
+    app/views/tasks/new.html.erb:3
+    app/controllers/tasks_controller.rb:30:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (122.4ms)
+Rendered rescues/_request_and_response (13.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:12:22) [GET]
+  [4;36;1mType Load (0.2ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map) on line #11 of app/views/tasks/new.html.erb:
+8:   </p>
+9:   <p>
+10:     <%= f.label :type %><br/>
+11:     <%= collection_select("task", "type", @tasks, "id", "name") %> 
+12:   </p>
+13:   <p>
+14:     <%= f.label :description %><br />
+
+    app/views/tasks/new.html.erb:11
+    app/views/tasks/new.html.erb:3
+    app/controllers/tasks_controller.rb:30:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (126.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:13:24) [GET]
+  [4;35;1mType Load (0.2ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.map) on line #11 of app/views/tasks/new.html.erb:
+8:   </p>
+9:   <p>
+10:     <%= f.label :type %><br/>
+11:     <%= collection_select("task", :type, @tasks, "id", "name") %> 
+12:   </p>
+13:   <p>
+14:     <%= f.label :description %><br />
+
+    app/views/tasks/new.html.erb:11
+    app/views/tasks/new.html.erb:3
+    app/controllers/tasks_controller.rb:30:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:14:01) [GET]
+  [4;36;1mType Load (0.2ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 19ms (View: 8, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TypesController#index (for 95.147.137.85 at 2010-02-11 22:14:11) [GET]
+  [4;35;1mType Load (0.5ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/types
+Rendering types/index
+Completed in 273ms (View: 218, DB: 1) | 200 OK [http://connect.blindpages.com/types]
+
+
+Processing TypesController#new (for 95.147.137.85 at 2010-02-11 22:14:14) [GET]
+Rendering template within layouts/types
+Rendering types/new
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://connect.blindpages.com/types/new]
+
+
+Processing TypesController#create (for 95.147.137.85 at 2010-02-11 22:14:21) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "type"=>{"name"=>"General"}}
+  [4;36;1mType Create (103.1ms)[0m   [0;1mINSERT INTO "types" ("name", "updated_at", "task_id", "created_at") VALUES('General', '2010-02-11 21:14:21', NULL, '2010-02-11 21:14:21')[0m
+Redirected to http://connect.blindpages.com/types/1
+Completed in 169ms (DB: 103) | 302 Found [http://connect.blindpages.com/types]
+
+
+Processing TypesController#show (for 95.147.137.85 at 2010-02-11 22:14:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Rendering template within layouts/types
+Rendering types/show
+Completed in 33ms (View: 25, DB: 0) | 200 OK [http://connect.blindpages.com/types/1]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:14:28) [GET]
+  [4;36;1mTask Load (0.7ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:14:30) [GET]
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 100ms (View: 8, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#create (for 95.147.137.85 at 2010-02-11 22:14:38) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "task"=>{"url"=>"http://foo.com", "type"=>"1", "description"=>"blah", "state"=>"Open"}}
+WARNING: Can't mass-assign these protected attributes: type
+  [4;36;1mTask Create (0.4ms)[0m   [0;1mINSERT INTO "tasks" ("updated_at", "url", "description", "audio_description", "state", "created_at") VALUES('2010-02-11 21:14:38', 'http://foo.com', 'blah', NULL, 'Open', '2010-02-11 21:14:38')[0m
+Redirected to http://connect.blindpages.com/tasks/2
+Completed in 21ms (DB: 0) | 302 Found [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:14:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 2) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 31ms (View: 23, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/2]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddTaskToType (20100211203045)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (7.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime, "task_id" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("types")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "types"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_types"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20100211203045'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tasks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("types")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+Migrating to CreateTasks (20100211154644)
+Migrating to AddTypeToTask (20100211203045)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "tasks" ADD "type_id" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100211203045')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("types")[0m
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:22:00) [GET]
+  [4;36;1mTask Load (0.8ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:22:03) [GET]
+  [4;35;1mType Load (0.4ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#create (for 95.147.137.85 at 2010-02-11 22:22:12) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "task"=>{"url"=>"http://foo.com", "type"=>"1", "description"=>"fo foo", "state"=>"Open"}}
+WARNING: Can't mass-assign these protected attributes: type
+  [4;36;1mTask Create (0.3ms)[0m   [0;1mINSERT INTO "tasks" ("updated_at", "url", "type_id", "description", "audio_description", "state", "created_at") VALUES('2010-02-11 21:22:12', 'http://foo.com', NULL, 'fo foo', NULL, 'Open', '2010-02-11 21:22:12')[0m
+Redirected to http://connect.blindpages.com/tasks/3
+Completed in 39ms (DB: 0) | 302 Found [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:22:12) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 3) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/3]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:22:58) [GET]
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 15ms (View: 7, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:22:59) [GET]
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:24:18) [GET]
+  [4;36;1mType Load (0.3ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 21ms (View: 11, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#create (for 95.147.137.85 at 2010-02-11 22:24:44) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "task"=>{"url"=>"http://foo.com", "type_id"=>"1", "description"=>"blahblah", "state"=>"Open"}}
+  [4;35;1mTask Create (0.4ms)[0m   [0mINSERT INTO "tasks" ("updated_at", "url", "type_id", "description", "audio_description", "state", "created_at") VALUES('2010-02-11 21:24:44', 'http://foo.com', 1, 'blahblah', NULL, 'Open', '2010-02-11 21:24:44')[0m
+Redirected to http://connect.blindpages.com/tasks/4
+Completed in 41ms (DB: 0) | 302 Found [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:24:44) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 4) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 89ms (View: 4, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/4]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:24:46) [GET]
+  [4;35;1mTask Load (1.1ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:25:41) [GET]
+  [4;36;1mType Load (0.3ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 23ms (View: 11, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#create (for 95.147.137.85 at 2010-02-11 22:25:46) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "task"=>{"url"=>"http://foo.com", "type_id"=>"1", "description"=>"again", "state"=>"Open"}}
+  [4;35;1mTask Create (0.3ms)[0m   [0mINSERT INTO "tasks" ("updated_at", "url", "type_id", "description", "audio_description", "state", "created_at") VALUES('2010-02-11 21:25:46', 'http://foo.com', 1, 'again', NULL, 'Open', '2010-02-11 21:25:46')[0m
+Redirected to http://connect.blindpages.com/tasks/5
+Completed in 26ms (DB: 0) | 302 Found [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:25:46) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 5) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/5]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:25:58) [GET]
+  [4;35;1mTask Load (1.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:25:59) [GET]
+  [4;36;1mType Load (0.3ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:28:16) [GET]
+  [4;35;1mTask Load (1.1ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 17ms (View: 10, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:28:20) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 5) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 90ms (View: 81, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/5]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:28:36) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mTask Load (0.5ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 5) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 34ms (View: 24, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/5]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:29:12) [GET]
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:31:01) [GET]
+  [4;35;1mTask Load (1.1ms)[0m   [0mSELECT * FROM "tasks" [0m
+
+ActionView::MissingTemplate (Missing template tasks/index.erb in view path app/views):
+  app/controllers/tasks_controller.rb:7:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:31:12) [GET]
+  [4;36;1mTask Load (1.1ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+
+ActionView::MissingTemplate (Missing template tasks/index.erb in view path app/views):
+  app/controllers/tasks_controller.rb:7:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:31:14) [GET]
+  [4;35;1mTask Load (1.1ms)[0m   [0mSELECT * FROM "tasks" [0m
+
+ActionView::MissingTemplate (Missing template tasks/index.erb in view path app/views):
+  app/controllers/tasks_controller.rb:7:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:31:39) [GET]
+  [4;36;1mType Load (0.3ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 122ms (View: 110, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:31:44) [GET]
+  [4;35;1mTask Load (1.0ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #13 of app/views/tasks/index.html.erb:
+10: 
+11: <% @tasks.each do |task| %>
+12:   <tr>
+13:     <td><%=h task.type.name %></td>
+14:     <td><%=h task.state %></td>
+15:     <td><%=h task.description %></td>
+16:     <td><%=h task.url %></td>
+
+    app/views/tasks/index.html.erb:13
+    app/views/tasks/index.html.erb:11:in `each'
+    app/views/tasks/index.html.erb:11
+    app/controllers/tasks_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (121.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:32:27) [GET]
+  [4;36;1mTask Load (1.1ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#destroy (for 95.147.137.85 at 2010-02-11 22:32:32) [DELETE]
+  Parameters: {"authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "id"=>"1"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 1) [0m
+  [4;36;1mTask Destroy (0.3ms)[0m   [0;1mDELETE FROM "tasks" WHERE "id" = 1[0m
+Redirected to http://connect.blindpages.com/tasks
+Completed in 28ms (DB: 1) | 302 Found [http://connect.blindpages.com/tasks/1]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:32:32) [GET]
+  [4;35;1mTask Load (1.3ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#destroy (for 95.147.137.85 at 2010-02-11 22:32:34) [DELETE]
+  Parameters: {"authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "id"=>"2"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 2) [0m
+  [4;35;1mTask Destroy (0.2ms)[0m   [0mDELETE FROM "tasks" WHERE "id" = 2[0m
+Redirected to http://connect.blindpages.com/tasks
+Completed in 19ms (DB: 1) | 302 Found [http://connect.blindpages.com/tasks/2]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:32:35) [GET]
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#destroy (for 95.147.137.85 at 2010-02-11 22:32:36) [DELETE]
+  Parameters: {"authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "id"=>"3"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 3) [0m
+  [4;36;1mTask Destroy (0.2ms)[0m   [0;1mDELETE FROM "tasks" WHERE "id" = 3[0m
+Redirected to http://connect.blindpages.com/tasks
+Completed in 19ms (DB: 1) | 302 Found [http://connect.blindpages.com/tasks/3]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:32:38) [GET]
+  [4;35;1mTask Load (0.8ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:32:38) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mTask Load (0.2ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 3) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Task with ID=3):
+  app/controllers/tasks_controller.rb:16:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:33:01) [GET]
+  [4;35;1mTask Load (0.8ms)[0m   [0mSELECT * FROM "tasks" [0m
+
+ActionView::MissingTemplate (Missing template tasks/index.erb in view path app/views):
+  app/controllers/tasks_controller.rb:7:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:33:04) [GET]
+  [4;36;1mTask Load (0.8ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;35;1mType Load (0.5ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 12282ms (View: 12274, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:33:32) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 4) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+  [4;36;1mType Load (0.3ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 1448ms (View: 1439, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/4]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:36:28) [GET]
+  [4;35;1mTask Load (0.8ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;36;1mType Load (0.3ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 20ms (View: 13, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:36:30) [GET]
+  [4;36;1mType Load (0.3ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 17ms (View: 7, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#create (for 95.147.137.85 at 2010-02-11 22:36:36) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "task"=>{"url"=>"http://foo.com", "type_id"=>"1", "description"=>"ssfdhj", "state"=>"Open"}}
+  [4;35;1mTask Create (0.3ms)[0m   [0mINSERT INTO "tasks" ("updated_at", "url", "type_id", "description", "audio_description", "state", "created_at") VALUES('2010-02-11 21:36:36', 'http://foo.com', 1, 'ssfdhj', NULL, 'Open', '2010-02-11 21:36:36')[0m
+Redirected to http://connect.blindpages.com/tasks/6
+Completed in 25ms (DB: 0) | 302 Found [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:36:36) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 6) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 19ms (View: 10, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/6]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:36:41) [GET]
+  [4;36;1mTask Load (0.9ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:39:30) [GET]
+  [4;36;1mTask Load (0.9ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#edit (for 95.147.137.85 at 2010-02-11 22:39:32) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 4) [0m
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 24ms (View: 11, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/4/edit]
+
+
+Processing TasksController#update (for 95.147.137.85 at 2010-02-11 22:39:39) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "id"=>"4", "task"=>{"url"=>"http://foo.com", "type_id"=>"1", "description"=>"blahblahfoo", "state"=>"Open"}}
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 4) [0m
+  [4;35;1mTask Update (44.1ms)[0m   [0mUPDATE "tasks" SET "description" = 'blahblahfoo', "updated_at" = '2010-02-11 21:39:39' WHERE "id" = 4[0m
+Redirected to http://connect.blindpages.com/tasks/4
+Completed in 71ms (DB: 44) | 302 Found [http://connect.blindpages.com/tasks/4]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:39:39) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 4) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 19ms (View: 10, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/4]
+
+
+Processing TypesController#index (for 95.147.137.85 at 2010-02-11 22:39:44) [GET]
+  [4;36;1mType Load (0.7ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/types
+Rendering types/index
+Completed in 38ms (View: 31, DB: 1) | 200 OK [http://connect.blindpages.com/types]
+
+
+Processing TypesController#new (for 95.147.137.85 at 2010-02-11 22:39:45) [GET]
+Rendering template within layouts/types
+Rendering types/new
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://connect.blindpages.com/types/new]
+
+
+Processing TypesController#create (for 95.147.137.85 at 2010-02-11 22:39:50) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "type"=>{"name"=>"Another"}}
+  [4;35;1mType Create (0.3ms)[0m   [0mINSERT INTO "types" ("name", "updated_at", "created_at") VALUES('Another', '2010-02-11 21:39:50', '2010-02-11 21:39:50')[0m
+Redirected to http://connect.blindpages.com/types/2
+Completed in 23ms (DB: 0) | 302 Found [http://connect.blindpages.com/types]
+
+
+Processing TypesController#show (for 95.147.137.85 at 2010-02-11 22:39:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mType Load (0.3ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 2) [0m
+Rendering template within layouts/types
+Rendering types/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/types/2]
+
+
+Processing TypesController#index (for 95.147.137.85 at 2010-02-11 22:39:52) [GET]
+  [4;35;1mType Load (0.8ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/types
+Rendering types/index
+Completed in 93ms (View: 6, DB: 1) | 200 OK [http://connect.blindpages.com/types]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:39:56) [GET]
+  [4;36;1mTask Load (1.0ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 24ms (View: 15, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#edit (for 95.147.137.85 at 2010-02-11 22:39:59) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 4) [0m
+  [4;35;1mType Load (0.4ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/4/edit]
+
+
+Processing TasksController#update (for 95.147.137.85 at 2010-02-11 22:40:04) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "id"=>"4", "task"=>{"url"=>"http://foo.com", "type_id"=>"2", "description"=>"blahblahfoo", "state"=>"Open"}}
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 4) [0m
+  [4;35;1mTask Update (0.3ms)[0m   [0mUPDATE "tasks" SET "type_id" = 2, "updated_at" = '2010-02-11 21:40:04' WHERE "id" = 4[0m
+Redirected to http://connect.blindpages.com/tasks/4
+Completed in 37ms (DB: 1) | 302 Found [http://connect.blindpages.com/tasks/4]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:40:05) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 4) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 2) [0m
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/4]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:40:15) [GET]
+  [4;36;1mTask Load (0.9ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 2) [0m
+  [4;36;1mType Load (0.5ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 101ms (View: 92, DB: 2) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:40:19) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mTask Load (0.4ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 4) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 2) [0m
+Completed in 19ms (View: 10, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/4]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:40:23) [GET]
+  [4;36;1mTask Load (0.9ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 2) [0m
+  [4;36;1mType Load (0.3ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 1) [0m
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#edit (for 95.147.137.85 at 2010-02-11 22:40:26) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 4) [0m
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/edit
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/4/edit]
+
+
+Processing TasksController#destroy (for 95.147.137.85 at 2010-02-11 22:40:39) [DELETE]
+  Parameters: {"authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "id"=>"5"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 5) [0m
+  [4;35;1mTask Destroy (0.2ms)[0m   [0mDELETE FROM "tasks" WHERE "id" = 5[0m
+Redirected to http://connect.blindpages.com/tasks
+Completed in 83167ms (DB: 1) | 302 Found [http://connect.blindpages.com/tasks/5]
+
+
+Processing TypesController#index (for 95.147.137.85 at 2010-02-11 22:42:03) [GET]
+  [4;36;1mType Load (0.7ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/types
+Rendering types/index
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://connect.blindpages.com/types]
+
+
+Processing TypesController#destroy (for 95.147.137.85 at 2010-02-11 22:42:07) [DELETE]
+  Parameters: {"authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "id"=>"2"}
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 2) [0m
+  [4;36;1mType Destroy (0.2ms)[0m   [0;1mDELETE FROM "types" WHERE "id" = 2[0m
+Redirected to http://connect.blindpages.com/types
+Completed in 224ms (DB: 1) | 302 Found [http://connect.blindpages.com/types/2]
+
+
+Processing TypesController#index (for 95.147.137.85 at 2010-02-11 22:42:08) [GET]
+  [4;35;1mType Load (0.7ms)[0m   [0mSELECT * FROM "types" [0m
+Rendering template within layouts/types
+Rendering types/index
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://connect.blindpages.com/types]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:42:11) [GET]
+  [4;36;1mTask Load (0.8ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;35;1mType Load (0.2ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #13 of app/views/tasks/index.html.erb:
+10: 
+11: <% @tasks.each do |task| %>
+12:   <tr>
+13:     <td><%=h task.type.name %></td>
+14:     <td><%=h task.state %></td>
+15:     <td><%=h task.description %></td>
+16:     <td><%=h task.url %></td>
+
+    app/views/tasks/index.html.erb:13
+    app/views/tasks/index.html.erb:11:in `each'
+    app/views/tasks/index.html.erb:11
+    app/controllers/tasks_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TypesController#index (for 95.147.137.85 at 2010-02-11 22:42:21) [GET]
+  [4;36;1mType Load (0.7ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/types
+Rendering types/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://connect.blindpages.com/types]
+
+
+Processing TypesController#new (for 95.147.137.85 at 2010-02-11 22:42:23) [GET]
+Rendering template within layouts/types
+Rendering types/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://connect.blindpages.com/types/new]
+
+
+Processing TypesController#create (for 95.147.137.85 at 2010-02-11 22:42:25) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "type"=>{"name"=>"foo"}}
+  [4;35;1mType Create (0.3ms)[0m   [0mINSERT INTO "types" ("name", "updated_at", "created_at") VALUES('foo', '2010-02-11 21:42:25', '2010-02-11 21:42:25')[0m
+Redirected to http://connect.blindpages.com/types/3
+Completed in 30ms (DB: 0) | 302 Found [http://connect.blindpages.com/types]
+
+
+Processing TypesController#show (for 95.147.137.85 at 2010-02-11 22:42:26) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mType Load (0.3ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 3) [0m
+Rendering template within layouts/types
+Rendering types/show
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/types/3]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:42:31) [GET]
+  [4;35;1mTask Load (0.9ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;36;1mType Load (0.2ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 2) [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.name) on line #13 of app/views/tasks/index.html.erb:
+10: 
+11: <% @tasks.each do |task| %>
+12:   <tr>
+13:     <td><%=h task.type.name %></td>
+14:     <td><%=h task.state %></td>
+15:     <td><%=h task.description %></td>
+16:     <td><%=h task.url %></td>
+
+    app/views/tasks/index.html.erb:13
+    app/views/tasks/index.html.erb:11:in `each'
+    app/views/tasks/index.html.erb:11
+    app/controllers/tasks_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (123.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-11 22:43:20) [GET]
+  [4;35;1mTask Load (0.5ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#new (for 95.147.137.85 at 2010-02-11 22:43:22) [GET]
+  [4;36;1mType Load (0.4ms)[0m   [0;1mSELECT * FROM "types" [0m
+Rendering template within layouts/tasks
+Rendering tasks/new
+Completed in 19ms (View: 7, DB: 0) | 200 OK [http://connect.blindpages.com/tasks/new]
+
+
+Processing TasksController#create (for 95.147.137.85 at 2010-02-11 22:43:29) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"PlIyawU7s2djE3TxGeV8Hd6mAUZTTE0lJdq32FWA7Fc=", "task"=>{"url"=>"http://foo.com", "type_id"=>"3", "description"=>"blah", "state"=>"Open"}}
+  [4;35;1mTask Create (0.3ms)[0m   [0mINSERT INTO "tasks" ("updated_at", "url", "type_id", "description", "audio_description", "state", "created_at") VALUES('2010-02-11 21:43:29', 'http://foo.com', 3, 'blah', NULL, 'Open', '2010-02-11 21:43:29')[0m
+Redirected to http://connect.blindpages.com/tasks/7
+Completed in 19ms (DB: 0) | 302 Found [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-11 22:43:29) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 7) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 3) [0m
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/7]

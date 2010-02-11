@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100211154644) do
+ActiveRecord::Schema.define(:version => 20100211203045) do
 
   create_table "tasks", :force => true do |t|
     t.string   "state"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20100211154644) do
     t.binary   "audio_description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type_id"
   end
 
   create_table "types", :force => true do |t|

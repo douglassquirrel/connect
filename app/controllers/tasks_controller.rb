@@ -25,7 +25,8 @@ class TasksController < ApplicationController
   # GET /tasks/new.xml
   def new
     @task = Task.new
-
+    @types = Type.all
+ 
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @task }
@@ -35,6 +36,7 @@ class TasksController < ApplicationController
   # GET /tasks/1/edit
   def edit
     @task = Task.find(params[:id])
+    @types = Type.all
   end
 
   # POST /tasks

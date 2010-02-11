@@ -2,18 +2,18 @@
 
 <table>
   <tr>
+    <th>Type</th>
     <th>State</th>
     <th>Description</th>
     <th>Url</th>
-    <th>Audio description</th>
   </tr>
 
 <% @tasks.each do |task| %>
   <tr>
+    <td><%=h task.type.name %></td>
     <td><%=h task.state %></td>
     <td><%=h task.description %></td>
     <td><%=h task.url %></td>
-    <td><%=h task.audio_description %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
     <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>

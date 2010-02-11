@@ -4,6 +4,10 @@
   <%= f.error_messages %>
 
   <p>
+    <%= f.label :type_id %><br/>
+    <%= collection_select("task", :type_id, @types, "id", "name") %> 
+  </p>
+  <p>
     <%= f.label :state %><br />
     <%= select(:task, :state, Task::STATES) %>
   </p>

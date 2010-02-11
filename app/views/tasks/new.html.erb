@@ -7,6 +7,10 @@
     <%= f.hidden_field :state, :value => "Open" %>
   </p>
   <p>
+    <%= f.label :type_id %><br/>
+    <%= collection_select("task", :type_id, @types, "id", "name") %> 
+  </p>
+  <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>
