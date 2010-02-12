@@ -1649,3 +1649,2651 @@ Rendering template within layouts/tasks
 Rendering tasks/show
   [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 3) [0m
 Completed in 18ms (View: 9, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/7]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-12 17:38:32) [GET]
+  [4;36;1mTask Load (0.8ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 3) [0m
+Completed in 591ms (View: 575, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-12 17:38:36) [GET]
+  [4;36;1mTask Load (0.7ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 3) [0m
+Completed in 18ms (View: 11, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+Migrating to CreateTasks (20100211154644)
+Migrating to AddTypeToTask (20100211203045)
+Migrating to CreateUsers (20100212192204)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100212192204')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tasks")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("types")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTypes (20100211152528)
+Migrating to CreateTasks (20100211154644)
+Migrating to AddTypeToTask (20100211203045)
+Migrating to CreateUsers (20100212192204)
+Migrating to RenamePassword (20100212193457)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (99.8ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "hashed_password" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "hashed_password" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100212193457')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("tasks")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("types")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+/!\ FAILSAFE /!\  Fri Feb 12 21:01:36 +0100 2010
+  Status: 500 Internal Server Error
+  /opt/connect/app/controllers/application_controller.rb:36: syntax error, unexpected kEND, expecting $end
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:380:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:379:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:80:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:92:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:90:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Feb 12 21:01:48 +0100 2010
+  Status: 500 Internal Server Error
+  /opt/connect/app/controllers/application_controller.rb:36: syntax error, unexpected kEND, expecting $end
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:380:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:379:in `load_file'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:80:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/dependencies.rb:92:in `const_missing'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:90:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:03:25) [GET]
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 130ms (View: 112, DB: 1) | 200 OK [http://connect.blindpages.com/users]
+
+
+Processing UsersController#new (for 95.147.137.85 at 2010-02-12 21:03:29) [GET]
+Rendering template within layouts/users
+Rendering users/new
+
+ActionView::TemplateError (undefined method `password' for #<User:0x2a9b9d9250>) on line #12 of app/views/users/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :password %><br />
+12:     <%= f.text_field :password %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :name %><br />
+
+    app/views/users/new.html.erb:12
+    app/views/users/new.html.erb:3
+    app/controllers/users_controller.rb:49:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (45.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 95.147.137.85 at 2010-02-12 21:06:01) [GET]
+Rendering template within layouts/users
+Rendering users/new
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #12 of app/views/users/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :password %><br />
+12:     <%= f.text_field :password %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :name %><br />
+
+    app/views/users/new.html.erb:12
+    app/views/users/new.html.erb:3
+    app/controllers/users_controller.rb:49:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (135.5ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 95.147.137.85 at 2010-02-12 21:09:06) [GET]
+Rendering template within layouts/users
+Rendering users/new
+
+ActionView::TemplateError (undefined method `password' for #<User:0x2a9b7e0368>) on line #12 of app/views/users/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :password %><br />
+12:     <%= f.text_field :password %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :name %><br />
+
+    app/views/users/new.html.erb:12
+    app/views/users/new.html.erb:3
+    app/controllers/users_controller.rb:49:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 95.147.137.85 at 2010-02-12 21:10:25) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://connect.blindpages.com/users/new]
+
+
+Processing UsersController#create (for 95.147.137.85 at 2010-02-12 21:10:50) [POST]
+  Parameters: {"user"=>{"name"=>"Douglas Squirrel", "username"=>"squirrel", "password"=>"1234"}, "commit"=>"Create", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c="}
+
+TypeError (can't convert nil into String):
+  app/models/user.rb:14:in `digest'
+  app/models/user.rb:14:in `hexdigest'
+  app/models/user.rb:14:in `encrypt'
+  app/models/user.rb:10:in `password='
+  app/controllers/users_controller.rb:63:in `new'
+  app/controllers/users_controller.rb:63:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 95.147.137.85 at 2010-02-12 21:11:22) [POST]
+  Parameters: {"user"=>{"name"=>"Douglas Squirrel", "username"=>"squirrel", "password"=>"1234"}, "commit"=>"Create", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c="}
+
+NameError (uninitialized constant UsersController::User):
+  app/controllers/users_controller.rb:63:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 95.147.137.85 at 2010-02-12 21:11:46) [GET]
+
+NameError (uninitialized constant UsersController::User):
+  app/controllers/users_controller.rb:47:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:12:00) [GET]
+
+NameError (uninitialized constant UsersController::User):
+  app/controllers/users_controller.rb:25:in `index'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:16:23) [GET]
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 139ms (View: 132, DB: 1) | 200 OK [http://connect.blindpages.com/users]
+
+
+Processing UsersController#new (for 95.147.137.85 at 2010-02-12 21:16:26) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 41ms (View: 34, DB: 0) | 200 OK [http://connect.blindpages.com/users/new]
+
+
+Processing UsersController#create (for 95.147.137.85 at 2010-02-12 21:16:37) [POST]
+  Parameters: {"user"=>{"name"=>"Douglas Squirrel", "username"=>"squirrel", "password"=>"1234"}, "commit"=>"Create", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c="}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'squirrel') LIMIT 1[0m
+  [4;36;1mUser Create (42.2ms)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "hashed_password", "username", "created_at") VALUES('Douglas Squirrel', '2010-02-12 20:16:37', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'squirrel', '2010-02-12 20:16:37')[0m
+Redirected to http://connect.blindpages.com/users/1
+Completed in 124ms (DB: 42) | 302 Found [http://connect.blindpages.com/users]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:16:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 23ms (View: 15, DB: 0) | 200 OK [http://connect.blindpages.com/users/1]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:17:09) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://connect.blindpages.com/users]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:17:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 12ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/users/1]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:17:15) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://connect.blindpages.com/users]
+
+
+Processing UsersController#edit (for 95.147.137.85 at 2010-02-12 21:17:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/edit
+Completed in 25ms (View: 18, DB: 0) | 200 OK [http://connect.blindpages.com/users/1/edit]
+
+
+Processing UsersController#update (for 95.147.137.85 at 2010-02-12 21:17:24) [PUT]
+  Parameters: {"user"=>{"name"=>"Douglas Squirrel", "username"=>"squirrel", "password"=>"foo"}, "commit"=>"Update", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'squirrel' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = '0beec7b5ea3f0fdbc95d0dd47f3c5bc275da8a33', "updated_at" = '2010-02-12 20:17:24' WHERE "id" = 1[0m
+Redirected to http://connect.blindpages.com/users/1
+Completed in 27ms (DB: 1) | 302 Found [http://connect.blindpages.com/users/1]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:17:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/users/1]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:18:20) [GET]
+Redirected to http://connect.blindpages.com/user/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users]
+
+
+Processing ApplicationController#index (for 95.147.137.85 at 2010-02-12 21:18:20) [GET]
+
+ActionController::RoutingError (No route matches "/user/login" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:20:03) [GET]
+Redirected to http://connect.blindpages.com/user/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users]
+
+
+Processing ApplicationController#index (for 95.147.137.85 at 2010-02-12 21:20:03) [GET]
+
+ActionController::RoutingError (No route matches "/user/login" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:20:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/users/1]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:20:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/users/1]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:20:51) [GET]
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:20:51) [GET]
+  Parameters: {"id"=>"login"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:36:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.0ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:25:40) [GET]
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:25:41) [GET]
+  Parameters: {"id"=>"login"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:36:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:25:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 92ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/users/show/1]
+
+
+Processing UsersController#edit (for 95.147.137.85 at 2010-02-12 21:25:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/edit
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://connect.blindpages.com/users/1/edit]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:25:54) [GET]
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:25:54) [GET]
+  Parameters: {"id"=>"login"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:36:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:02) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:02) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:02) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:02) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:02) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:02) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:02) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:03) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:03) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:03) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:03) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:04) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:04) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:04) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:04) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:04) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:05) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:05) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:05) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:05) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:05) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:32:12) [GET]
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:12) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:12) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:13) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:13) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:13) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:13) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:13) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:13) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:13) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:14) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:14) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:14) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:14) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:14) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:14) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:15) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:15) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:15) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:15) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:15) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 21:32:35) [GET]
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:35) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:35) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:36) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:36) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:36) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:36) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:36) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:36) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:36) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:37) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:37) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:37) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:37) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:37) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:37) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:37) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:38) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:38) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:38) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:32:38) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:15) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:15) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:15) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:15) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:16) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:16) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:16) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:16) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:16) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:16) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:16) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:17) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:17) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:17) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:17) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:17) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:17) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:17) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:18) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:18) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:34:18) [GET]
+  Parameters: {"id"=>"login"}
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:35:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/users/show/1]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:35:58) [GET]
+  Parameters: {"id"=>"index"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=index):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 95.147.137.85 at 2010-02-12 21:36:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/edit
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://connect.blindpages.com/users/edit/1]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:36:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://connect.blindpages.com/users/show/1]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:36:29) [GET]
+  Parameters: {"id"=>"index"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=index):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:37:14) [GET]
+  Parameters: {"id"=>"index"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=index):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:37:17) [GET]
+  Parameters: {"id"=>"index"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=index):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:37:40) [GET]
+  Parameters: {"id"=>"login"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:39:09) [GET]
+  Parameters: {"id"=>"login"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 95.147.137.85 at 2010-02-12 21:39:28) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://connect.blindpages.com/users/new]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:39:37) [GET]
+  Parameters: {"id"=>"jsjslkf"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=jsjslkf):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:39:46) [GET]
+  Parameters: {"id"=>"login"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (114.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:39:58) [GET]
+  Parameters: {"id"=>"logout"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=logout):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:41:41) [GET]
+  Parameters: {"id"=>"edit"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=edit):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (112.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 95.147.137.85 at 2010-02-12 21:41:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/edit
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://connect.blindpages.com/users/edit/1]
+
+
+Processing UsersController#edit (for 95.147.137.85 at 2010-02-12 21:41:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=2):
+  app/controllers/users_controller.rb:55:in `edit'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 95.147.137.85 at 2010-02-12 21:41:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/edit
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://connect.blindpages.com/users/edit/1]
+
+
+Processing UsersController#editxx (for 95.147.137.85 at 2010-02-12 21:41:57) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to editxx. Actions: create, current_user, destroy, edit, index, login, login_required, logout, new, redirect_to_stored, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 21:42:16) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/users
+Rendering users/login
+
+ActionView::TemplateError (undefined method `start_form_tag' for #<ActionView::Base:0x2a9b9d3468>) on line #1 of app/views/users/login.html.erb:
+1: <%= start_form_tag :action=> "login" %>
+2:     <h3>Login</h3> 
+3: 
+4:   <label for="user_username">Username:</label><br/>
+
+    app/views/users/login.html.erb:1
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 21:42:44) [GET]
+  Parameters: {"id"=>"login"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 21:42:48) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/users
+Rendering users/login
+
+ActionView::TemplateError (undefined method `start_form_tag' for #<ActionView::Base:0x2a9b9f9640>) on line #1 of app/views/users/login.html.erb:
+1: <%= start_form_tag :action=> "login" %>
+2:     <h3>Login</h3> 
+3: 
+4:   <label for="user_username">Username:</label><br/>
+
+    app/views/users/login.html.erb:1
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#loginxx (for 95.147.137.85 at 2010-02-12 21:42:54) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionController::UnknownAction (No action responded to loginxx. Actions: create, current_user, destroy, edit, index, login, login_required, logout, new, redirect_to_stored, show, and update):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 21:42:58) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/users
+Rendering users/login
+
+ActionView::TemplateError (undefined method `start_form_tag' for #<ActionView::Base:0x2a9b6897a8>) on line #1 of app/views/users/login.html.erb:
+1: <%= start_form_tag :action=> "login" %>
+2:     <h3>Login</h3> 
+3: 
+4:   <label for="user_username">Username:</label><br/>
+
+    app/views/users/login.html.erb:1
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (120.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 195.219.121.172 at 2010-02-12 21:45:50) [GET]
+
+ActionController::RoutingError (No route matches "/w00tw00t.at.ISC.SANS.test0:)" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 21:46:37) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/users
+Rendering users/login
+ERROR: compiling _run_erb_app47views47users47login46html46erb RAISED compile error
+/opt/connect/app/views/users/login.html.erb:1: syntax error, unexpected ')'
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( form_tag :action=> "login" do ).to_s); @output_buffer.concat "\n"
+                                                                                                                                                     ^
+/opt/connect/app/views/users/login.html.erb:12: syntax error, unexpected kEND
+@output_buffer.concat(( end ).to_s); @output_buffer.concat "\n"
+                           ^
+/opt/connect/app/views/users/login.html.erb:14: syntax error, unexpected kENSURE, expecting kEND
+/opt/connect/app/views/users/login.html.erb:16: syntax error, unexpected $end, expecting ')'
+Function body:           def _run_erb_app47views47users47login46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( form_tag :action=> "login" do ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    <h3>Login</h3> \n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  <label for=\"user_username\">Username:</label><br/>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( text_field "user", "username", :size => 20 ).to_s); @output_buffer.concat "<br/>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  <label for=\"user_password\">Password:</label><br/>\n"
+@output_buffer.concat "  "; @output_buffer.concat(( password_field "user", "password", :size => 20 ).to_s); @output_buffer.concat "<br/>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( submit_tag "Submit" ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( end ).to_s); @output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /opt/connect/app/views/users/login.html.erb:16:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:941:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1322:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1328:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/opt/connect/app/views/users/login.html.erb:1: syntax error, unexpected ')'
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( form_tag :action=> "login" do ).to_s); @output_buffer.concat "\n"
+                                                                                                                                                     ^
+/opt/connect/app/views/users/login.html.erb:12: syntax error, unexpected kEND
+@output_buffer.concat(( end ).to_s); @output_buffer.concat "\n"
+                           ^
+/opt/connect/app/views/users/login.html.erb:14: syntax error, unexpected kENSURE, expecting kEND
+/opt/connect/app/views/users/login.html.erb:16: syntax error, unexpected $end, expecting ')') on line #1 of app/views/users/login.html.erb:
+1: <%= form_tag :action=> "login" do %>
+2:     <h3>Login</h3> 
+3: 
+4:   <label for="user_username">Username:</label><br/>
+
+    app/views/users/login.html.erb:16:in `compile!'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 21:56:50) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/users
+Rendering users/login
+ERROR: compiling _run_erb_app47views47users47login46html46erb RAISED compile error
+/opt/connect/app/views/users/login.html.erb:1: syntax error, unexpected ')'
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( form_tag 'login' do ).to_s); @output_buffer.concat "\n"
+                                                                                                                                           ^
+/opt/connect/app/views/users/login.html.erb:12: syntax error, unexpected kEND
+@output_buffer.concat(( end ).to_s); @output_buffer.concat "\n"
+                           ^
+/opt/connect/app/views/users/login.html.erb:14: syntax error, unexpected kENSURE, expecting kEND
+/opt/connect/app/views/users/login.html.erb:16: syntax error, unexpected $end, expecting ')'
+Function body:           def _run_erb_app47views47users47login46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( form_tag 'login' do ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    <h3>Log In</h3> \n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( label_tag 'username' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( text_field_tag 'username', '', :size => 20 ).to_s); @output_buffer.concat "<br/>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( label_tag 'password' ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( password_field_tag ).to_s); @output_buffer.concat "<br/>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "  "; @output_buffer.concat(( submit_tag "Submit" ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat(( end ).to_s); @output_buffer.concat "\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /opt/connect/app/views/users/login.html.erb:16:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_view/base.rb:257:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1246:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:941:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1322:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:1328:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.3/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:527:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/filters.rb:606:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:434:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:111:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:82:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/opt/connect/app/views/users/login.html.erb:1: syntax error, unexpected ')'
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( form_tag 'login' do ).to_s); @output_buffer.concat "\n"
+                                                                                                                                           ^
+/opt/connect/app/views/users/login.html.erb:12: syntax error, unexpected kEND
+@output_buffer.concat(( end ).to_s); @output_buffer.concat "\n"
+                           ^
+/opt/connect/app/views/users/login.html.erb:14: syntax error, unexpected kENSURE, expecting kEND
+/opt/connect/app/views/users/login.html.erb:16: syntax error, unexpected $end, expecting ')') on line #1 of app/views/users/login.html.erb:
+1: <%= form_tag 'login' do %>
+2:     <h3>Log In</h3> 
+3: 
+4:   <%= label_tag 'username' %>
+
+    app/views/users/login.html.erb:16:in `compile!'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (120.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 21:57:46) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/users
+Rendering users/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://connect.blindpages.com/users/login/1]
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 21:57:53) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "id"=>"login", "password"=>"foo"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/users_controller.rb:4:in `login'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#login (for 95.147.137.85 at 2010-02-12 21:59:08) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "id"=>"login", "password"=>"foo"}
+
+NameError (uninitialized constant UsersController):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (97.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 21:59:19) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/users
+Rendering users/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/users/login/1]
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 21:59:29) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "id"=>"login", "password"=>"foo"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+
+NoMethodError (undefined method `redirect_to_url' for #<UsersController:0x2a9b825f80>):
+  app/controllers/application_controller.rb:31:in `redirect_to_stored'
+  app/controllers/users_controller.rb:6:in `login'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 22:01:11) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/users
+Rendering users/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://connect.blindpages.com/users/login/1]
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 22:01:17) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "id"=>"login", "password"=>"foo"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+Redirected to http://connect.blindpages.com/user
+Completed in 10ms (DB: 1) | 302 Found [http://connect.blindpages.com/users/login/login]
+
+
+Processing ApplicationController#index (for 95.147.137.85 at 2010-02-12 22:01:18) [GET]
+
+ActionController::RoutingError (No route matches "/user" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ActionController::Base#index (for 95.147.137.85 at 2010-02-12 22:01:42) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/users_controller.rb:1
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#login (for 95.147.137.85 at 2010-02-12 22:01:50) [GET]
+  Parameters: {"id"=>"21"}
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/users_controller.rb:1
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#login (for 95.147.137.85 at 2010-02-12 22:02:06) [GET]
+  Parameters: {"id"=>"2"}
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/users_controller.rb:1
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 22:03:12) [GET]
+  Parameters: {"id"=>"2"}
+Rendering template within layouts/users
+Rendering users/login
+Completed in 41ms (View: 39, DB: 0) | 200 OK [http://connect.blindpages.com/users/login/2]
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 22:03:17) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "id"=>"login", "password"=>"blah"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/login
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://connect.blindpages.com/users/login/login]
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 22:03:25) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "id"=>"login", "password"=>"blahblah"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/login
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://connect.blindpages.com/users/login/login]
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 22:13:40) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/users
+Rendering users/login
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://connect.blindpages.com/users/login/1]
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 22:13:45) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"foo", "id"=>"login", "password"=>"bar"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'foo') LIMIT 1[0m
+Rendering template within layouts/users
+Rendering users/login
+Completed in 10ms (View: 2, DB: 1) | 200 OK [http://connect.blindpages.com/users/login/login]
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 22:13:49) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "id"=>"login", "password"=>"foo"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+Redirected to http://connect.blindpages.com/users
+Completed in 10ms (DB: 1) | 302 Found [http://connect.blindpages.com/users/login/login]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 22:13:49) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 71ms (View: 29, DB: 1) | 200 OK [http://connect.blindpages.com/users]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 22:14:00) [GET]
+  Parameters: {"id"=>"logout"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=logout):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.7ms)
+Rendered rescues/_request_and_response (54.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#logout (for 95.147.137.85 at 2010-02-12 22:14:07) [GET]
+  Parameters: {"id"=>"1"}
+Redirected to http://connect.blindpages.com/users/login
+Completed in 6ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/logout/1]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 22:14:07) [GET]
+  Parameters: {"id"=>"login"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (29.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#login (for 95.147.137.85 at 2010-02-12 22:14:11) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/users
+Rendering users/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/users/login/1]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 22:14:16) [GET]
+  Parameters: {"id"=>"index"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=index):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 22:19:19) [GET]
+Redirected to http://connect.blindpages.com/users/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 22:19:19) [GET]
+  Parameters: {"id"=>"login"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:34:in `show'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (28.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 95.147.137.85 at 2010-02-12 22:27:09) [GET]
+
+ActionController::RoutingError (No route matches "/login/login" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 95.147.137.85 at 2010-02-12 22:27:12) [GET]
+
+ActionController::RoutingError (No route matches "/login/login/1" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#login (for 95.147.137.85 at 2010-02-12 22:29:19) [GET]
+
+NameError (uninitialized constant AuthController):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (23.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:30:01) [GET]
+Rendering auth/login
+Completed in 301ms (View: 299, DB: 0) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:30:08) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"foo", "password"=>"bar"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'foo') LIMIT 1[0m
+Rendering auth/login
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:31:10) [GET]
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:31:16) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "password"=>"foo"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+Redirected to http://connect.blindpages.com/users
+Completed in 9ms (DB: 1) | 302 Found [http://connect.blindpages.com/login]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 22:31:16) [GET]
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://connect.blindpages.com/users]
+/!\ FAILSAFE /!\  Fri Feb 12 22:32:13 +0100 2010
+  Status: 500 Internal Server Error
+  No such file or directory - /opt/connect/config/routes.rb
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:297:in `stat'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:297:in `routes_changed_at'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:296:in `each'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:296:in `routes_changed_at'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:274:in `reload'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Feb 12 22:32:18 +0100 2010
+  Status: 500 Internal Server Error
+  No such file or directory - /opt/connect/config/routes.rb
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:297:in `stat'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:297:in `routes_changed_at'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:296:in `each'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:296:in `routes_changed_at'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:274:in `reload'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Fri Feb 12 22:32:22 +0100 2010
+  Status: 500 Internal Server Error
+  No such file or directory - /opt/connect/config/routes.rb
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:297:in `stat'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:297:in `routes_changed_at'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:296:in `each'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:296:in `routes_changed_at'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/routing/route_set.rb:274:in `reload'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:59:in `reload_application'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/reloader.rb:28:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/failsafe.rb:26:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.3.3/lib/action_controller/dispatcher.rb:106:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/rails/rack/static.rb:31:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /usr/lib/ruby/gems/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.3.3/lib/commands/server.rb:111
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 22:33:21) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://connect.blindpages.com/users]
+
+
+Processing AuthController#logout (for 95.147.137.85 at 2010-02-12 22:33:27) [GET]
+Redirected to http://connect.blindpages.com/login
+Completed in 5ms (DB: 0) | 302 Found [http://connect.blindpages.com/logout]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:33:27) [GET]
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:33:39) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "password"=>"bar"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+Rendering auth/login
+Completed in 10ms (View: 1, DB: 1) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:33:44) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "password"=>"foo"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+Redirected to http://connect.blindpages.com/tasks
+Completed in 10ms (DB: 1) | 302 Found [http://connect.blindpages.com/login]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-12 22:33:45) [GET]
+  [4;35;1mTask Load (0.7ms)[0m   [0mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;36;1mType Load (0.4ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 3) [0m
+Completed in 270ms (View: 164, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-12 22:33:47) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mTask Load (0.3ms)[0m   [0mSELECT * FROM "tasks" WHERE ("tasks"."id" = 7) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+  [4;36;1mType Load (0.4ms)[0m   [0;1mSELECT * FROM "types" WHERE ("types"."id" = 3) [0m
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/7]
+
+
+Processing AuthController#logout (for 95.147.137.85 at 2010-02-12 22:34:14) [GET]
+Redirected to http://connect.blindpages.com/login
+Completed in 5ms (DB: 0) | 302 Found [http://connect.blindpages.com/logout]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:34:15) [GET]
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 22:34:19) [GET]
+Redirected to http://connect.blindpages.com/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:34:19) [GET]
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:34:29) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "password"=>"foo"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+Redirected to http://connect.blindpages.com/users
+Completed in 9ms (DB: 1) | 302 Found [http://connect.blindpages.com/login]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 22:34:29) [GET]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://connect.blindpages.com/users]
+
+
+Processing AuthController#logout (for 95.147.137.85 at 2010-02-12 22:35:01) [GET]
+Redirected to http://connect.blindpages.com/login
+Completed in 5ms (DB: 0) | 302 Found [http://connect.blindpages.com/logout]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:35:01) [GET]
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 22:35:07) [GET]
+  Parameters: {"id"=>"1"}
+Redirected to http://connect.blindpages.com/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/users/1]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:35:08) [GET]
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:35:12) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "password"=>"b "}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+Rendering auth/login
+Completed in 11ms (View: 1, DB: 1) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:35:15) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"", "password"=>""}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (username = '') LIMIT 1[0m
+Rendering auth/login
+Completed in 9ms (View: 1, DB: 1) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:35:20) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "password"=>"foo"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+Redirected to http://connect.blindpages.com/users/1
+Completed in 9ms (DB: 1) | 302 Found [http://connect.blindpages.com/login]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 22:35:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 223ms (View: 215, DB: 0) | 200 OK [http://connect.blindpages.com/users/1]
+
+
+Processing UsersController#edit (for 95.147.137.85 at 2010-02-12 22:35:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/edit
+Completed in 874ms (View: 867, DB: 0) | 200 OK [http://connect.blindpages.com/users/1/edit]
+
+
+Processing UsersController#update (for 95.147.137.85 at 2010-02-12 22:35:31) [PUT]
+  Parameters: {"user"=>{"name"=>"Douglas Squirrel", "username"=>"squirrel", "password"=>"MD6849"}, "commit"=>"Update", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."username" = 'squirrel' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (8227.8ms)[0m   [0;1mUPDATE "users" SET "hashed_password" = '8cb737523afcc9c0ddbb9e2346389171c22d84ad', "updated_at" = '2010-02-12 21:35:31' WHERE "id" = 1[0m
+Redirected to http://connect.blindpages.com/users/1
+Completed in 39461ms (DB: 8228) | 302 Found [http://connect.blindpages.com/users/1]
+
+
+Processing UsersController#show (for 95.147.137.85 at 2010-02-12 22:36:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://connect.blindpages.com/users/1]
+
+
+Processing UsersController#index (for 95.147.137.85 at 2010-02-12 22:36:31) [GET]
+  [4;36;1mUser Load (9.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 20ms (View: 5, DB: 10) | 200 OK [http://connect.blindpages.com/users]
+
+
+Processing AuthController#logout (for 95.147.137.85 at 2010-02-12 22:36:50) [GET]
+Redirected to http://connect.blindpages.com/login
+Completed in 5ms (DB: 0) | 302 Found [http://connect.blindpages.com/logout]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:36:50) [GET]
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-12 22:36:57) [GET]
+Redirected to http://connect.blindpages.com/login
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://connect.blindpages.com/tasks]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:36:57) [GET]
+Rendering auth/login
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://connect.blindpages.com/login]
+
+
+Processing AuthController#login (for 95.147.137.85 at 2010-02-12 22:37:02) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"4FhjynMvcsB+mJNmEptg9tiy6lKpp80ookKGMGBNu6c=", "username"=>"squirrel", "password"=>"MD6849"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE (username = 'squirrel') LIMIT 1[0m
+Redirected to http://connect.blindpages.com/tasks
+Completed in 10ms (DB: 1) | 302 Found [http://connect.blindpages.com/login]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-12 22:37:03) [GET]
+  [4;36;1mTask Load (0.7ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 3) [0m
+Completed in 22ms (View: 11, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]
+
+
+Processing TasksController#show (for 95.147.137.85 at 2010-02-12 22:37:05) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mTask Load (0.3ms)[0m   [0;1mSELECT * FROM "tasks" WHERE ("tasks"."id" = 7) [0m
+Rendering template within layouts/tasks
+Rendering tasks/show
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 3) [0m
+Completed in 20ms (View: 9, DB: 1) | 200 OK [http://connect.blindpages.com/tasks/7]
+
+
+Processing TasksController#index (for 95.147.137.85 at 2010-02-12 22:37:08) [GET]
+  [4;36;1mTask Load (0.8ms)[0m   [0;1mSELECT * FROM "tasks" [0m
+Rendering template within layouts/tasks
+Rendering tasks/index
+  [4;35;1mType Load (0.3ms)[0m   [0mSELECT * FROM "types" WHERE ("types"."id" = 3) [0m
+Completed in 21ms (View: 11, DB: 1) | 200 OK [http://connect.blindpages.com/tasks]

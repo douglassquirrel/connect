@@ -1,0 +1,16 @@
+<% if flash[:warning] -%>
+  <p><%= flash[:warning] %></p>
+<% end -%>
+
+<% form_tag 'login' do -%>
+    <h3>Log In</h3> 
+
+  <%= label_tag 'username' %>
+  <%= text_field_tag 'username', '', :size => 20 %><br/>
+
+  <%= label_tag 'password' %>
+  <%= password_field_tag %><br/>
+
+  <%= submit_tag "Submit" %>
+
+<% end -%>

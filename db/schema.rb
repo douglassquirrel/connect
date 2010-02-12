@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100211203045) do
+ActiveRecord::Schema.define(:version => 20100212193457) do
 
   create_table "tasks", :force => true do |t|
     t.string   "state"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(:version => 20100211203045) do
   end
 
   create_table "types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "hashed_password"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
