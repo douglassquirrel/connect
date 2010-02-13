@@ -2,7 +2,7 @@ class AuthController < ApplicationController
   def login
     if request.post?
       if session[:user] = User.authenticate(params[:username], params[:password])
-        flash[:message]  = "Login successful"
+        flash[:notice]  = "Login successful"
         redirect_to_stored
       else
         flash[:warning] = "Login unsuccessful"

@@ -1,0 +1,41 @@
+<h1>Hello <%=h @user.name %></h1>
+
+<h2>My tasks</h2>
+<table>
+  <tr>
+    <th>Type</th>
+    <th>State</th>
+    <th>Description</th>
+  </tr>
+
+<% @my_tasks.each do |task| %>
+  <tr>
+    <td><%=h task.type.name %></td>
+    <td><%=h task.state %></td>
+    <td><%=h task.description %></td>
+    <td><%= link_to 'Show', task %></td>
+    <td><%= link_to 'Edit', edit_task_path(task) %></td>
+    <td><%= link_to 'Drop', :action => 'drop', :id => task %></td>
+  </tr>
+<% end %>
+</table>
+
+<h2>Available tasks</h2>
+<table>
+  <tr>
+    <th>Type</th>
+    <th>State</th>
+    <th>Description</th>
+  </tr>
+
+<% @available_tasks.each do |task| %>
+  <tr>
+    <td><%=h task.type.name %></td>
+    <td><%=h task.state %></td>
+    <td><%=h task.description %></td>
+    <td><%= link_to 'Show', task %></td>
+    <td><%= link_to 'Edit', edit_task_path(task) %></td>
+    <td><%= link_to 'Take', :action => 'take', :id => task %></td>
+  </tr>
+<% end %>
+</table>
