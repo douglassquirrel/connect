@@ -2,9 +2,15 @@
   <b>Type:</b>
   <%=h @task.type.name %>
 </p>
+
 <p>
   <b>State:</b>
   <%=h @task.state %>
+</p>
+
+<p>
+  <b>Assignee:</b>
+  <%=h @task.try(:assignee).try(:name) || "None" %>
 </p>
 
 <p>

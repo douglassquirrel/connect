@@ -11,6 +11,11 @@
     <%= collection_select("task", :type_id, @types, "id", "name") %> 
   </p>
   <p>
+    <%= f.label :assignee_id %><br/>
+    <%= collection_select("task", :assignee_id, @assignees, "id", "name", 
+                          options = {:include_blank => true}) %> 
+  </p>
+  <p>
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>

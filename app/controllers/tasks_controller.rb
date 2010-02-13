@@ -26,6 +26,7 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
     @types = Type.all
+    @assignees = User.all
  
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +38,7 @@ class TasksController < ApplicationController
   def edit
     @task = Task.find(params[:id])
     @types = Type.all
+    @assignees = User.all
   end
 
   # POST /tasks

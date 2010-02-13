@@ -4,6 +4,7 @@
   <tr>
     <th>Type</th>
     <th>State</th>
+    <th>Assignee</th>
     <th>Description</th>
     <th>Url</th>
   </tr>
@@ -12,6 +13,7 @@
   <tr>
     <td><%=h task.type.name %></td>
     <td><%=h task.state %></td>
+    <td><%=h @task.try(:assignee).try(:name) || "None" %></td>
     <td><%=h task.description %></td>
     <td><%=h task.url %></td>
     <td><%= link_to 'Show', task %></td>
