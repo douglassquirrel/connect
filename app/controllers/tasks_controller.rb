@@ -51,6 +51,8 @@ class TasksController < ApplicationController
   # POST /tasks.xml
   def create
     @task = Task.new(params[:task])
+    @types = Type.all
+    @assignees = User.all
 
     respond_to do |format|
       if @task.save

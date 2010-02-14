@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
   STATES = ['Open', 'Done']
 
-  validates_format_of :url, :with => URI::regexp(%w(http https))
+  validates_format_of :url, :with => URI::regexp(%w(http https)), :allow_nil => true, :allow_blank => true
   validates_presence_of :type_id
 
   belongs_to :type

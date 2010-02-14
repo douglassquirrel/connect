@@ -23,7 +23,7 @@
   <%=h @task.url %>
 </p>
 
-<% if @task.audio_description.length > 0 %>
+<% if @task.audio_description && !@task.audio_description.empty? %>
   <p>
     <%= link_to "Audio description", audio_task_path(@task) %>
   </p>
