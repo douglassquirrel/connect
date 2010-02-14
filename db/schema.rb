@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100213090416) do
+ActiveRecord::Schema.define(:version => 20100214143527) do
 
   create_table "tasks", :force => true do |t|
     t.string   "state"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20100213090416) do
     t.datetime "updated_at"
     t.integer  "type_id"
     t.integer  "assignee_id"
+    t.string   "audio_content_type"
   end
 
   create_table "types", :force => true do |t|

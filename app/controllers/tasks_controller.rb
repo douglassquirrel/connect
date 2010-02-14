@@ -41,6 +41,12 @@ class TasksController < ApplicationController
     @assignees = User.all
   end
 
+  # GET /tasks/1/audio
+  def audio
+    @task = Task.find(params[:id])
+    send_data (@task.audio_description, :type => @task.audio_content_type, :filename => "audio_description.wav", :disposition => 'inline')
+  end
+
   # POST /tasks
   # POST /tasks.xml
   def create

@@ -1,9 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :users
 
-  map.resources :tasks
-
   map.resources :types
+
+  map.resources :tasks, :member => { :audio => :get }
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -48,7 +48,6 @@ ActionController::Routing::Routes.draw do |map|
   map.connect 'login',  :controller => 'auth', :action => 'login'
   map.connect 'logout', :controller => 'auth', :action => 'logout'
   map.connect 'my_tasks', :controller => 'my_tasks', :action => 'index'
-  #map.connect 'my_tasks/:action', :controller => 'my_tasks'
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

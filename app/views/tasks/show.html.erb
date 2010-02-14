@@ -23,11 +23,11 @@
   <%=h @task.url %>
 </p>
 
-<p>
-  <b>Audio description:</b>
-  <%=h @task.audio_description %>
-</p>
-
+<% if @task.audio_description.length > 0 %>
+  <p>
+    <%= link_to "Audio description", audio_task_path(@task) %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
