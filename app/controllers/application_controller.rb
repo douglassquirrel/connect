@@ -3,35 +3,20 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  #protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
-  #before_filter :login_required, :except=>[:login, :logout]
+  before_filter :authenticate
 
-
-  def login_required
-    if session[:user]
-      return true
+  private
+    def authenticate
+      if user = authenticate_with_http_basic { |username, password| User.authenticate(username, password) }
+        @current_user = user
+      else
+        request_http_basic_authentication "Secure Volunteer Connect"
+      end
     end
-    flash[:warning]='Please login to continue'
-    session[:return_to]=request.request_uri
-    redirect_to :controller => "auth", :action => "login"
-    return false 
-  end
-
-  def current_user
-    session[:user]
-  end
-
-  def redirect_to_stored
-    if return_to = session[:return_to]
-      session[:return_to]=nil
-      redirect_to return_to
-    else
-      redirect_to :controller=>'my_tasks'
-    end
-  end
 end
 

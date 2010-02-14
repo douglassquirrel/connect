@@ -1,4 +1,4 @@
-<h1>Hello <%=h @user.name %></h1>
+<h1>Hello <%=h @current_user.name %></h1>
 
 <h2>My tasks</h2>
 <table>
@@ -35,7 +35,7 @@
     <td><%=h task.description %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Take', task_path(task, :task => {:assignee_id => @user}), :method => 'put' %></td>
+    <td><%= link_to 'Take', task_path(task, :task => {:assignee_id => @current_user}), :method => 'put' %></td>
   </tr>
 <% end %>
 </table>
