@@ -15,7 +15,7 @@
     <td><%=h task.description %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Drop', :action => 'drop', :id => task %></td>
+    <td><%= link_to 'Drop', task_path(task, :task => {:assignee_id => nil}), :method => 'put' %></td>
   </tr>
 <% end %>
 </table>
@@ -35,7 +35,7 @@
     <td><%=h task.description %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Take', :action => 'take', :id => task %></td>
+    <td><%= link_to 'Take', task_path(task, :task => {:assignee_id => @user}), :method => 'put' %></td>
   </tr>
 <% end %>
 </table>
