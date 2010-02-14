@@ -9,10 +9,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100214143527) do
+ActiveRecord::Schema.define(:version => 20100214182202) do
 
   create_table "tasks", :force => true do |t|
-    t.string   "state"
+    t.string   "state",              :default => "Open"
     t.text     "description"
     t.string   "url"
     t.binary   "audio_description"
