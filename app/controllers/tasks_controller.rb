@@ -1,4 +1,26 @@
 class TasksController < ApplicationController
+  ##### Non-standard actions #####
+
+  # GET /tasks/my
+  def my
+    @my_tasks        = find_open_tasks_by_assignee(@current_user)
+    @available_tasks = find_open_tasks_by_assignee(nil)
+
+    respond_to do |format|
+      format.html # my.html.erb
+    end
+  end
+
+  # GET /tasks/1/audio
+  def audio
+    @task = Task.find(params[:id])
+    send_data (@task.audio_description, :type => @task.audio_content_type, 
+                                        :filename => "audio_description.wav", 
+                                        :disposition => 'inline')
+  end
+
+  ##### Standard idempotent actions #####
+
   # GET /tasks
   # GET /tasks.xml
   def index
@@ -41,11 +63,7 @@ class TasksController < ApplicationController
     @assignees = User.all
   end
 
-  # GET /tasks/1/audio
-  def audio
-    @task = Task.find(params[:id])
-    send_data (@task.audio_description, :type => @task.audio_content_type, :filename => "audio_description.wav", :disposition => 'inline')
-  end
+  ##### Standardata-modifying actions #####
 
   # POST /tasks
   # POST /tasks.xml
@@ -94,4 +112,9 @@ class TasksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  private
+    def find_open_tasks_by_assignee(assignee)
+      Task.find(:all, :conditions => { :state => 'Open', :assignee_id => assignee })
+    end
 end

@@ -4,18 +4,17 @@
 <table>
   <tr>
     <th>Type</th>
-    <th>State</th>
     <th>Description</th>
   </tr>
 
 <% @my_tasks.each do |task| %>
   <tr>
     <td><%=h task.type.name %></td>
-    <td><%=h task.state %></td>
     <td><%=h task.description %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
     <td><%= link_to 'Drop', task_path(task, :task => {:assignee_id => nil}), :method => 'put' %></td>
+    <td><%= link_to 'Done', task_path(task, :task => {:assignee_id => nil, :state => 'Done'}), :method => 'put' %></td>
   </tr>
 <% end %>
 </table>
@@ -24,14 +23,12 @@
 <table>
   <tr>
     <th>Type</th>
-    <th>State</th>
     <th>Description</th>
   </tr>
 
 <% @available_tasks.each do |task| %>
   <tr>
     <td><%=h task.type.name %></td>
-    <td><%=h task.state %></td>
     <td><%=h task.description %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
