@@ -11,7 +11,6 @@ xml.vxml "xmlns" => "http://www.w3.org/2001/vxml", "version" => "2.0" do
   xml.property "name" => "inputmodes", "value" => "dtmf"
   xml.form do
     xml.field "name"=>"type_id", "expr"=>"'1'"
-    xml.field "name"=>"format",  "expr"=>"'xml'"
 
     #field for audio record
 
