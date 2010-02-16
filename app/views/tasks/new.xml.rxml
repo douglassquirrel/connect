@@ -13,7 +13,7 @@ xml.vxml "xmlns" => "http://www.w3.org/2001/vxml", "version" => "2.0" do
     xml.field "name"=>"task[type_id]", "value"=>"1"
     #field for audio record
     xml.filled do
-      xml.submit "next" => "/tasks", "method" => "post"
+      xml.submit "next" => "/tasks?format=xml", "method" => "post"
     end
   end
 end

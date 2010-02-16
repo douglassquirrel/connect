@@ -27,10 +27,10 @@ xml.vxml "xmlns" => "http://www.w3.org/2001/vxml", "version" => "2.0" do
     end
     xml.filled do
       xml.if "cond" => "choice == '1'" do
-        xml.submit "next" => "http://unlock.blindpages.com/auth", "method" => "get"
+        xml.submit "next" => "http://unlock.blindpages.com/auth?format=xml", "method" => "get"
       end 
       xml.if "cond" => "choice == '2'" do
-        xml.submit "next" => "/tasks/new", "method" => "get"
+        xml.submit "next" => "/tasks/new?format=xml", "method" => "get"
       end 
     end
   end
