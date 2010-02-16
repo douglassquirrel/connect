@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ccxml version="1.0" xmlns:voxeo="http://community.voxeo.com/xmlns/ccxml">
+  <var name="maindialog"/>
+  <var name="timeoutdialog"/>
+  <var name="state" expr="'init'"/>
+  <var name="connid"/>
+
+  <eventprocessor statevariable="state">
+
+    <transition event="connection.alerting" state="init">
+      <log expr="'***** CONNECTION ALERTING *****'"/>
+      <accept/>
+    </transition>
+
+    <transition event="connection.connected" state="init">
+      <log expr="'***** CALL WAS ANSWERED *****'"/>
+
+      <log expr="'***** EVENT$.CONNECTION.CONNECTIONID = ' + event$.connection.connectionid"/>
+      <log expr="'***** EVENT$.CONNECTION.PROTOCOL.NAME = ' + event$.connection.protocol.name"/>
+      <log expr="'***** EVENT$.CONNECTION.PROTOCOL.VERSION = ' + event$.connection.protocol.version"/>
+      <log expr="'***** EVENT$.CONNECTION.STATE = ' + event$.connection.state"/>
+      <log expr="'***** EVENT$.CONNECTION.LOCAL = ' + event$.connection.local"/>
+      <log expr="'***** EVENT$.CONNECTION.REMOTE = ' + event$.connection.remote"/>
+      <log expr="'***** EVENT$.CONNECTION.ORIGINATOR = ' + event$.connection.originator"/>
+      <assign name="connid" expr="event$.connectionid"/>
+
+      <log expr="'Sending user to start page'"/>
+      <assign name="state" expr="'dialogActive'" />
+      <dialogstart src="'http://connect.blindpages.com/phone'" namelist="connid" type="'application/voicexml+xml'" dialogid="maindialog"/>
+      <send name="'timeout'" target="session.id" delay="'600s'"/>
+    </transition>
+
+    <transition event="timeout" state="dialogActive">
+      <log expr="'***** TIMEOUT RECEIVED, NOW TERMINATING THE MAIN DIALOG *****'"/>
+      <assign name="state" expr="'timedout'" />
+      <dialogterminate dialogid="maindialog" immediate="false"/>
+    </transition>
+
+    <transition event="dialog.exit" state="timedout">
+      <assign name="state" expr="'timedout-done'"/>
+      <dialogstart src="'http://blindpages.com/limit.xml'" type="'application/voicexml+xml'" 
+                   dialogid="timeoutdialog" connectionid="connid"/>
+    </transition>
+
+    <transition event="send.successful" state="dialogActive">
+      <log expr="'***** SEND IS SUCCESSFUL *****'"/>
+    </transition>
+
+    <transition event="error.dialog.notstarted'">
+      <log expr="'****** ERROR.DIALOGNOTSTARTED.NAME = ' + event$.name"/>
+      <log expr="'***** EVENT$.NAME  = ' + event$.name"/>
+      <log expr="'***** EVENT$.DIALOGID  = ' + event$.dialogid"/>
+      <log expr="'***** EVENT$.DIALOG  = ' + event$.dialog"/>
+      <log expr="'***** EVENT$.CONFERENCEID  = ' + event$.conferenceid"/>
+      <log expr="'***** EVENT$.CONNECTIONID  = ' + event$.connectionid"/>
+      <log expr="'***** EVENT$.REASON  = ' + event$.reason"/>
+      <log expr="'***** EVENT$.EVENTID  = ' + event$.eventid"/>
+      <log expr="'***** EVENT$.EVENTSOURCE  = ' + event$.eventsource"/>
+      <log expr="'***** EVENT$.EVENTSOURCETYPE  = ' + event$.eventsourcetype"/>
+      <exit/>
+    </transition>
+
+    <transition event="error.send.targetunavailable">
+      <log expr="'***** SEND TARGET UNAVAILABLE *****'"/>
+      <exit/>
+    </transition>
+
+    <transition event="dialog.exit" state="'dialogActive'">
+      <log expr="'***** DIALOG EXIT IN MAIN DIALOG ACTIVE STATE *****'"/>
+      <exit/>
+    </transition>   
+
+    <transition event="dialog.exit">
+      <log expr="'***** CALL EXITING *****'"/>
+      <log expr="'***** event$.VALUES.F_1 =' + event$.values.F_1"/>
+      <log expr="'***** EVENT$.NAME  = ' + event$.name"/>
+      <log expr="'***** EVENT$.DIALOGID  = ' + event$.dialogid"/>
+      <log expr="'***** EVENT$.CONFERENCEID  = ' + event$.conferenceid"/>
+      <log expr="'***** EVENT$.CONNECTIONID  = ' + event$.connectionid"/>
+      <log expr="'***** EVENT$.EVENTID  = ' + event$.eventid"/>
+      <log expr="'***** EVENT$.EVENTSOURCE  = ' + event$.eventsource"/>
+      <log expr="'***** EVENT$.EVENTSOURCETYPE  = ' + event$.eventsourcetype"/>
+     
+      <!-- DIALOG OBJECT PROPERTIES -->
+      <log expr="'***** EVENT$.DIALOG.DIALOGID = ' + event$.dialog.dialogid"/>
+      <log expr="'***** EVENT$.DIALOG.CONNECTIONID = ' + event$.dialog.connectionid"/>
+      <log expr="'***** EVENT$.DIALOG.CONFERENCEID = ' + event$.dialog.conferenceid"/>
+      <log expr="'***** EVENT$.DIALOG.TYPE = ' + event$.dialog.type"/>
+      <log expr="'***** EVENT$.DIALOG.SRC = ' + event$.dialog.src"/>
+      <log expr="'***** EVENT$.DIALOG.INPUT = ' + event$.dialog.input"/>
+      <log expr="'***** EVENT$.DIALOG.OUTPUTS = ' + event$.dialog.outputs"/>
+      <exit/>
+    </transition>
+
+    <transition event="connection.disconnected">
+      <log expr="'*** Call was just disconnected ***'"/>
+      <assign name="state" expr="'disconnected'" />
+      <send name="'http.get'" targettype="'basichttp'" target="'http://blindpages.com/auth/logout'" namelist="connid" />
+    </transition>
+
+    <transition event="send.successful" state="'disconnected'">
+      <log expr="'***** SEND IS SUCCESSFUL (on disconnection) *****'"/>
+      <exit/>
+    </transition>
+
+    <transition event="error.*">
+      <log expr="'an error has occured (' + event$.reason + ')'"/>
+      <log expr="'***  EVENT$.NAME = ' + event$.name"/>
+      <log expr="'***  EVENT$.REASON = ' + event$.reason"/>
+      <log expr="'***  EVENT$.TAGNAME = ' + event$.tagname"/>
+      <log expr="'***  EVENT$.EVENTID = ' + event$.eventid"/>
+      <log expr="'***  EVENT$.EVENTSOURCE = ' + event$.eventsource"/>
+      <log expr="'***  EVENT$.EVENTSOURCETYPE = ' + event$.eventsourcetype"/>
+      <voxeo:sendemail to="'squirrel@blindpages.com'"
+                        from="'noreply@blindpages.com'"
+                        type="'debug'"
+                        body="'Error in blindpages by phone - see logs'"/>
+      <exit/>
+    </transition>
+  </eventprocessor>
+</ccxml>
