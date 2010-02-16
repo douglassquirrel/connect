@@ -12,7 +12,24 @@ xml.vxml "xmlns" => "http://www.w3.org/2001/vxml", "version" => "2.0" do
   xml.form do
     xml.field "name"=>"type_id", "expr"=>"'1'"
     xml.field "name"=>"format",  "expr"=>"'xml'"
+
     #field for audio record
+
+    #fix when audio record added
+    xml.field "name"=>"choice" do
+      add_prompt(xml, "Press 1 to submit request")
+
+      xml.grammar "xml:lang"=>"en-GB", "root"=>"top", "mode"=>"dtmf" do
+        xml.rule "id"=>"top" do
+          xml.__send__('one-of'.to_sym) do
+            xml.item 1
+          end
+        end
+      end
+      xml.noinput do add_prompt(xml, "I did not hear anything. Please try again."); xml.reprompt; end
+      xml.nomatch do add_prompt(xml, "I did not recognise that. Please try again."); xml.reprompt; end
+    end
+
     xml.filled do
       xml.submit "next" => "/tasks", "method" => "post"
     end
