@@ -8,20 +8,30 @@ end
 xml.instruct! 
 xml.vxml "xmlns" => "http://www.w3.org/2001/vxml", "version" => "2.0" do
   xml.meta "name" => "maintainer", "content" => "squirrel@blindpages.com"
+  xml.property "name" => "inputmodes", "value" => "dtmf"
   xml.form do
-    xml.block do
-      xml.break "time" => "1000"
-      add_prompt(xml, "Blind pages")
-      add_prompt(xml, "Enter your pass code")
-    end
+    xml.field "name"=>"choice" do
+      add_prompt(xml, "Press 1 for BlindPages")
+      add_prompt(xml, "Press 2 for Connect")
 
-    xml.field "name"=>"passcode", "type"=>"digits?length=10" do
+      xml.grammar "xml:lang"=>"en-GB", "root"=>"top", "mode"=>"dtmf" do
+        xml.rule "id"=>"top" do
+          xml.__send__('one-of'.to_sym) do
+            xml.item 1
+            xml.item 2
+          end
+        end
+      end
       xml.noinput do add_prompt(xml, "I did not hear anything. Please try again."); xml.reprompt; end
       xml.nomatch do add_prompt(xml, "I did not recognise that. Please try again."); xml.reprompt; end
     end
     xml.filled do
-      xml.submit "next" => "/auth/login?format=xml&connid=#{params['connid']}", "method" => "get"
+      xml.if "cond" => "choice == '1'" do
+        xml.submit "next" => "http://unlock.blindpages.com/auth", "method" => "get"
+      end 
+      xml.if "cond" => "choice == '2'" do
+        xml.submit "next" => "/tasks/new", "method" => "get"
+      end 
     end
   end
 end
-

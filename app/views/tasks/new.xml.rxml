@@ -1,0 +1,19 @@
+def add_prompt(xml, text)
+  xml.prompt do
+    xml.prosody({"rate" => "-20%"}, text)
+    xml.break "time" => "500"
+  end
+end
+
+xml.instruct! 
+xml.vxml "xmlns" => "http://www.w3.org/2001/vxml", "version" => "2.0" do
+  xml.meta "name" => "maintainer", "content" => "squirrel@blindpages.com"
+  xml.property "name" => "inputmodes", "value" => "dtmf"
+  xml.form do
+    xml.field "name"=>"task[type_id]", "value"=>"1"
+    #field for audio record
+    xml.filled do
+      xml.submit "next" => "/tasks", "method" => "post"
+    end
+  end
+end

@@ -52,7 +52,8 @@ class TasksController < ApplicationController
  
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @task }
+      format.xml  # new.xml.rxml
+      #format.xml  { render :xml => @task }
     end
   end
 
@@ -63,7 +64,7 @@ class TasksController < ApplicationController
     @assignees = User.all
   end
 
-  ##### Standardata-modifying actions #####
+  ##### Standard data-modifying actions #####
 
   # POST /tasks
   # POST /tasks.xml
