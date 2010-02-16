@@ -51,9 +51,9 @@ class TasksController < ApplicationController
     @assignees = User.all
  
     respond_to do |format|
-      format.html # new.html.erb
-      format.xml  # new.xml.rxml
-      #format.xml  { render :xml => @task }
+      format.html     # new.html.erb
+      format.voicexml # new.voicexml.rxml
+      format.xml      { render :xml => @task }
     end
   end
 
