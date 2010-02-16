@@ -10,12 +10,13 @@ xml.vxml "xmlns" => "http://www.w3.org/2001/vxml", "version" => "2.0" do
   xml.meta "name" => "maintainer", "content" => "squirrel@blindpages.com"
   xml.property "name" => "inputmodes", "value" => "dtmf"
   xml.form do
-    xml.field "name"=>"type_id", "expr"=>"'1'"
+    xml.field "name"=>"type_id",            "expr"=>"'1'"
+    xml.field "name"=>"audio_content_type", "expr"=>"'audio/x-wav'"
 
     xml.record "name"=>"audio_description", 
                "beep"=>"true", 
                "dtmfterm"=>"true", 
-               "type"=>"audio/wav" do
+               "type"=>"audio/x-wav" do
       add_prompt(xml, "Record at the tone. Press any button when done.")
     end
 
