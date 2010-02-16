@@ -70,6 +70,7 @@ class TasksController < ApplicationController
   # POST /tasks.xml
   def create
     @task = Task.new(params[:task])
+    if params[:type_id] then @task[:type_id] = params[:type_id] end
     @types = Type.all
     @assignees = User.all
 
