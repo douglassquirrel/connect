@@ -26,7 +26,7 @@
 
       <log expr="'Sending user to start page'"/>
       <assign name="state" expr="'dialogActive'" />
-      <dialogstart src="'http://connect.blindpages.com/phone'" namelist="format connid" type="'application/voicexml+xml'" dialogid="maindialog"/>
+      <dialogstart src="'http://connect.blindpages.com/phone'" namelist="connid" type="'application/voicexml+xml'" dialogid="maindialog"/>
       <send name="'timeout'" target="session.id" delay="'600s'"/>
     </transition>
 
