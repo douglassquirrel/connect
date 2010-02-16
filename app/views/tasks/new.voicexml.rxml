@@ -12,7 +12,10 @@ xml.vxml "xmlns" => "http://www.w3.org/2001/vxml", "version" => "2.0" do
   xml.form do
     xml.field "name"=>"type_id", "expr"=>"'1'"
 
-    xml.record "name"=>"audio_description", "beep"=>"true", "dtmfterm"=>"true" do
+    xml.record "name"=>"audio_description", 
+               "beep"=>"true", 
+               "dtmfterm"=>"true", 
+               "type"=>"audio/wav" do
       add_prompt(xml, "Record at the tone. Press any button when done.")
     end
 
