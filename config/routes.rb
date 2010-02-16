@@ -47,6 +47,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.connect 'login',  :controller => 'auth', :action => 'login'
   map.connect 'logout', :controller => 'auth', :action => 'logout'
+  map.connect 'phone',  :controller => 'phone', :action => 'phone'
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
