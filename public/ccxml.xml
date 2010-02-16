@@ -4,7 +4,6 @@
   <var name="timeoutdialog"/>
   <var name="state" expr="'init'"/>
   <var name="connid"/>
-  <var name="format" expr="'xml'"/>
 
   <eventprocessor statevariable="state">
 
