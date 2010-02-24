@@ -11,6 +11,15 @@ class TasksController < ApplicationController
     end
   end
 
+  # GET /tasks/report
+  def report
+    @tasks = Task.all
+        
+    respond_to do |format|
+      format.html # index.html.erb
+    end
+  end
+
   # GET /tasks/1/audio
   def audio
     @task = Task.find(params[:id])

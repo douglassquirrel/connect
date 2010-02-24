@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :types
 
-  map.resources :tasks, :collection => { :my => :get }, :member => { :audio => :get }
+  map.resources :tasks, :collection => { :my => :get, :report => :get }, :member => { :audio => :get }
 
   # The priority is based upon order of creation: first created -> highest priority.
 
