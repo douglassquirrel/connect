@@ -13,12 +13,14 @@ xml.vxml "xmlns" => "http://www.w3.org/2001/vxml", "version" => "2.0" do
     xml.field "name"=>"choice" do
       add_prompt(xml, "Press 1 for BlindPages")
       add_prompt(xml, "Press 2 for Connect")
+      add_prompt(xml, "Press 3 for Maps")
 
       xml.grammar "xml:lang"=>"en-GB", "root"=>"top", "mode"=>"dtmf" do
         xml.rule "id"=>"top" do
           xml.__send__('one-of'.to_sym) do
             xml.item 1
             xml.item 2
+            xml.item 3
           end
         end
       end
@@ -31,6 +33,9 @@ xml.vxml "xmlns" => "http://www.w3.org/2001/vxml", "version" => "2.0" do
       end 
       xml.if "cond" => "choice == '2'" do
         xml.submit "next" => "/tasks/new", "method" => "get"
+      end 
+      xml.if "cond" => "choice == '3'" do
+        xml.submit "next" => "http://maps.blindpages.com/requests/new", "method" => "get"
       end 
     end
   end
