@@ -9,7 +9,7 @@
     </tr>
 
   <% @my_tasks.each do |task| %>
-    <tr class="<%= cycle("", "altrow") %>">
+    <tr class="<%= cycle("", "altrow", :name => "my_cycle") %>">
       <td><%=h task.type.name %></td>
       <td><%=h task.description %></td>
       <td>
@@ -36,7 +36,7 @@
     </tr>
 
     <% @available_tasks.each do |task| %>
-      <tr class="<%= cycle("", "altrow") %>">
+      <tr class="<%= cycle("", "altrow", :name => "avail_cycle") %>">
         <td><%=h task.type.name %></td>
         <td><%=h task.description %></td>
         <td>
