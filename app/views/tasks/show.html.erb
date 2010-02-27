@@ -26,12 +26,13 @@
   <%=h @task.description %>
 </div>
 
-<div class="prepend-9 span-6 append-9 last">
+<div class="prepend-8 span-8 append-8 last">
   <form action="">
     <input type="button" value="Edit" onclick="location.href='<%= edit_task_path(@task) %>'"/>
     <% if @task.url && !@task.url.empty? %>
       <input type="button" value="Work" onclick="location.href='<%= @task.url %>'"/>
     <% end %>
+    <input type="button" value="My"   onclick="location.href='<%= my_tasks_path         %>'"/>
     <input type="button" value="All"  onclick="location.href='<%= tasks_path            %>'"/>
   </form>
 </div>
