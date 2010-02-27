@@ -1,34 +1,38 @@
-<p>
+<h2>Task</h2>
+
+<div class="span-4">
   <b>Type:</b>
   <%=h @task.type.name %>
-</p>
+</div>
 
-<p>
+<div class="span-4">
   <b>State:</b>
   <%=h @task.state %>
-</p>
+</div>
 
-<p>
+<div class="span-8">
   <b>Assignee:</b>
   <%=h @task.try(:assignee).try(:name) || "None" %>
-</p>
+</div>
 
-<p>
-  <b>Description:</b>
-  <%=h @task.description %>
-</p>
-
-<% if @task.audio_description && !@task.audio_description.empty? %>
-  <p>
+<div class="span-8 last">
+  <% if @task.audio_description && !@task.audio_description.empty? %>
     <%= link_to "Audio description", audio_task_path(@task) %>
-  </p>
-<% end %>
+  <% end %>
+</div>
 
-<% if @task.url && !@task.url.empty? %>
-  <p>
-    <%= link_to 'Work on this task', @task.url %>
-  </p>
-<% end %>
+<div class="span-24 last">
+  <b>Description:</b><br/>
+  <%=h @task.description %>
+</div>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<div class="prepend-9 span-6 append-9 last">
+  <form action="">
+    <input type="button" value="Edit" onclick="location.href='<%= edit_task_path(@task) %>'"/>
+    <% if @task.url && !@task.url.empty? %>
+      <input type="button" value="Work" onclick="location.href='<%= @task.url %>'"/>
+    <% end %>
+    <input type="button" value="All"  onclick="location.href='<%= tasks_path            %>'"/>
+  </form>
+</div>
+
