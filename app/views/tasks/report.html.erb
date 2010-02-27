@@ -1,18 +1,23 @@
-<h1>Tasks by type</h1>
+<h2>Tasks by type</h2>
 
-<table class="tochart" summary="Tasks submitted by type">
-  <tr>
-    <th>Type</th>
-    <th>Number of Tasks</th>
-  </tr>
+<div class="span-12">
+  <table class="tochart color00BFFF" summary="Tasks submitted by type">
+    <tr>
+      <th>Type</th>
+      <th>Number of Tasks</th>
+    </tr>
 
-<% @tasks.group_by(&:type).each do |type, tasks| %>
-  <tr>
-    <td><%=h type.name %></td>
-    <td><%=h tasks.length %></td>
-  </tr>
-<% end %>
-</table>
+    <% @tasks.group_by(&:type).each do |type, tasks| %>
+      <tr class="<%= cycle("", "altrow") %>">
+        <td><%=h type.name %></td>
+        <td><%=h tasks.length %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="span-12 last" id="chart-container">
+</div>
 
 <script type="text/javascript" src="/javascripts/table2chart.js"></script>
 

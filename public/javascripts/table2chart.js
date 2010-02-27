@@ -37,7 +37,9 @@
       chart.setAttribute('src',charturl+data.join(',') + '&chl=' + labels.join('|'));
       chart.setAttribute('alt',t.getAttribute('summary'));
       chart.className = chartClass;
-      t.parentNode.insertBefore(chart,t);
+      container = document.getElementById("chart-container");
+      if (container) { container.appendChild(chart); }
+      else           { t.parentNode.insertBefore(chart,t); }
     };
   };
   
