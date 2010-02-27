@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= controller.controller_name %>: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag "blueprint/screen.css", :media => "screen, projection" %>
+  <%= stylesheet_link_tag "blueprint/print.css",  :media => "print"              %>
+  <%= stylesheet_link_tag "app.css",              :media => "all"                %>
+  <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+</head>
+<body>
+
+<% if flash[:notice]  then %><div class="notice"><%= flash[:notice] %> </div><% end %>
+<% if flash[:warning] then %><div class="error"> <%= flash[:warning] %></div><% end %>
+
+<div class="container">
+  <div class="span-24 last">
+    <h1 id="app-header">Connect</h1>
+    <div id="app-header-credit" class="span-24 last small">
+      <a href="http://www.flickr.com/photos/3336/96279715">Photo</a> by <a href="http://www.flickr.com/people/3336">Diego Silvestre</a>
+    </div>
+  </div>
+  <hr/>
+  <%= yield %>
+</div>
+
+</body>
+</html>
