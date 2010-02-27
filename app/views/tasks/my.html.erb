@@ -1,41 +1,50 @@
-<h1>Hello <%=h @current_user.name %></h1>
 
-<h2>My tasks</h2>
-<table>
-  <tr>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
+<div class="span-12">
+  <h2><%=h @current_user.name %>'s tasks</h1>
+  <table>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
 
-<% @my_tasks.each do |task| %>
-  <tr>
-    <td><%=h task.type.name %></td>
-    <td><%=h task.description %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Drop', task_path(task, :task => {:assignee_id => nil}), :method => 'put' %></td>
-    <td><%= link_to 'Done', task_path(task, :task => {:assignee_id => nil, :state => 'Done'}), :method => 'put' %></td>
-    <% if task.url && !task.url.empty? %>
-      <td><a href="<%=h task.url %>">Work</a></td>
+  <% @my_tasks.each do |task| %>
+    <tr class="<%= cycle("", "altrow") %>">
+      <td><%=h task.type.name %></td>
+      <td><%=h task.description %></td>
+      <td>
+        <%= link_to 'Show', task %>
+        <%= link_to 'Edit', edit_task_path(task) %>
+        <%= link_to 'Drop', task_path(task, :task => {:assignee_id => nil}), :method => 'put' %>
+        <%= link_to 'Done', task_path(task, :task => {:assignee_id => nil, :state => 'Done'}), :method => 'put' %>
+        <% if task.url && !task.url.empty? %>
+          <%= link_to 'Work', task.url %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+<div class="span-12 last">
+  <h2>Available tasks</h2>
+  <table>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+
+    <% @available_tasks.each do |task| %>
+      <tr class="<%= cycle("", "altrow") %>">
+        <td><%=h task.type.name %></td>
+        <td><%=h task.description %></td>
+        <td>
+          <%= link_to 'Show', task %>
+          <%= link_to 'Edit', edit_task_path(task) %>
+          <%= link_to 'Take', task_path(task, :task => {:assignee_id => @current_user}), :method => 'put' %>
+        </td>
+      </tr>
     <% end %>
-  </tr>
-<% end %>
-</table>
-
-<h2>Available tasks</h2>
-<table>
-  <tr>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-
-<% @available_tasks.each do |task| %>
-  <tr>
-    <td><%=h task.type.name %></td>
-    <td><%=h task.description %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Take', task_path(task, :task => {:assignee_id => @current_user}), :method => 'put' %></td>
-  </tr>
-<% end %>
-</table>
+  </table>
+</div>
