@@ -1,28 +1,35 @@
-<h1>Listing tasks</h1>
+<h2>All tasks</h2>
 
-<table>
-  <tr>
-    <th>Type</th>
-    <th>State</th>
-    <th>Assignee</th>
-    <th>Description</th>
-    <th>Url</th>
-  </tr>
+<div class="span-24 last">
+  <table>
+    <tr>
+      <th>Type</th>
+      <th>State</th>
+      <th>Assignee</th>
+      <th>Description</th>
+      <th>Url</th>
+      <th>Actions</th>
+    </tr>
 
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%=h task.type.name %></td>
-    <td><%=h task.state %></td>
-    <td><%=h task.try(:assignee).try(:name) || "None" %></td>
-    <td><%=h task.description %></td>
-    <td><%=h task.url %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <% @tasks.each do |task| %>
+    <tr class="<%= cycle("", "altrow") %>">
+      <td><%=h task.type.name %></td>
+      <td><%=h task.state %></td>
+      <td><%=h task.try(:assignee).try(:name) || "None" %></td>
+      <td><%=h task.description %></td>
+      <td><%=h task.url %></td>
+      <td>
+        <%= link_to 'Show', task %>
+        <%= link_to 'Edit', edit_task_path(task) %>
+        <%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
 
-<br/>
-
-<%= link_to 'New task', new_task_path %>
+<div class="prepend-10 span-2 append-10 last">
+  <form action="">
+    <input type="button" value="Add task" onclick="location.href='<%= new_task_path %>'"/>
+  </form>
+</div>
