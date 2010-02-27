@@ -1,33 +1,35 @@
-<h1>Editing task</h1>
+<h2>Edit task</h2>
 
 <% form_for(@task) do |f| %>
   <%= f.error_messages %>
 
-  <p>
+  <div class="span-4">
     <%= f.label :type_id %><br/>
     <%= collection_select("task", :type_id, @types, "id", "name") %> 
-  </p>
-  <p>
+  </div>
+  <div class="span-4">
     <%= f.label :state %><br />
     <%= select(:task, :state, Task::STATES) %>
-  </p>
-  <p>
+  </div>
+  <div class="span-8">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="span-8 last">
     <%= f.label :assignee_id %><br/>
     <%= collection_select("task", :assignee_id, @assignees, "id", "name", 
                           options = {:include_blank => true}) %> 
-  </p>
-  <p>
+  </div>
+  <div class="span-24 last">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </p>
-  <p>
+    <%= f.text_area :description, :rows => 5 %>
+  </div>
+  <div class="prepend-8 span-8 append-8 last">
     <%= f.submit 'Update' %>
+    <input type="button" value="Show" onclick="location.href='<%= task_path(@task) %>'"/>
+    <input type="button" value="My"   onclick="location.href='<%= my_tasks_path    %>'"/>
+    <input type="button" value="All"  onclick="location.href='<%= tasks_path       %>'"/>
+  </div>
+  <p>
   </p>
 <% end %>
-
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>

@@ -1,6 +1,6 @@
 <h2>Enter a new task</h2>
 
-<% form_for(@task, :html => { :multipart => true }) do |f| %>
+<% form_for(@task) do |f| %>
   <%= f.error_messages %>
   <%= f.hidden_field :state, :value => "Open" %>
 
@@ -23,6 +23,6 @@
   </div>
   <div class="prepend-10 span-4 append-10 last">
     <%= f.submit 'Create' %>
-    <input type="button" value="Back" onclick="location.href='<%= tasks_path %>'"/>
+    <input type="button" value="All" onclick="location.href='<%= tasks_path %>'"/>
   </div>
 <% end %>
