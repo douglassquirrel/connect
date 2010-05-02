@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
       if user = authenticate_with_http_basic { |username, password| User.authenticate(username, password) }
         @current_user = user
       else
-        request_http_basic_authentication "Secure Volunteer Connect"
+        request_http_basic_authentication "Micro-Bees"
       end
     end
 end
